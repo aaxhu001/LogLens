@@ -111,7 +111,7 @@ def format_message(template: str, rng: random.Random) -> str:
 def generate_logs(
     num_lines: int = 1000,
     start_date: str = "2026-03-01T00:00:00Z",
-    days: int = 14,
+    days: int = 25,
     seed: int = 42,
     output_path: str = "data/sample.log",
     spikes_truth_path: str = "data/spikes_truth.json",
@@ -122,7 +122,7 @@ def generate_logs(
     Args:
         num_lines: Total lines to generate.
         start_date: ISO-8601 UTC string for first timestamp.
-        days: Minimum number of days to span across.
+        days: Minimum number of days to span across (default 25 days).
         seed: Random seed for deterministic reproducibility.
         output_path: Target log file destination.
         spikes_truth_path: JSON destination for ground truth spike days.
@@ -146,10 +146,12 @@ def generate_logs(
     total_seconds = days * 86400
 
     # 3. Designate at least 3 spike days.
-    # We choose day 4, day 8, and day 12 (0-indexed day offsets: 3, 7, 11).
-    spike_offsets = [3, 7, 11]
-    # If the user requested fewer days, scale spike offsets accordingly.
-    if days < 14:
+    # To evaluate a 7-day rolling baseline without inter-spike contamination,
+    # spikes are placed with at least 8 days of separation: Day 8, Day 16, Day 24.
+    if days >= 24:
+        spike_offsets = [7, 15, 23]
+    else:
+        # Scale for shorter spans
         spike_offsets = [max(1, days // 4), max(2, days // 2), max(3, (3 * days) // 4)]
         spike_offsets = sorted(list(set(spike_offsets)))
 
@@ -253,8 +255,8 @@ def main() -> None:
     parser.add_argument(
         "--days",
         type=int,
-        default=14,
-        help="Number of days to span (default: 14).",
+        default=25,
+        help="Number of days to span (default: 25).",
     )
     parser.add_argument(
         "--spikes-out",

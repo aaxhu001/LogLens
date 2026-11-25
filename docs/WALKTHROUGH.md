@@ -102,3 +102,72 @@ LogLens is organized as a unidirectional data pipeline:
 - Aggregates daily error rates and evaluates the 3-sigma rolling anomaly rule:
   $$\text{threshold} = \mu_{\text{prev 7 days}} + 3 \times \sigma_{\text{prev 7 days}}$$
 - Generates publication-ready matplotlib visual charts (`output/error_spikes.png`), summary tables (`output/daily_counts.csv`, `output/spike_days.csv`), and human-readable interpretations (`output/interpretation.md`).
+
+---
+
+## 3. End-to-End Execution Trace of a Real Query
+
+Let's trace what happens when a user searches for:
+```
+level:ERROR service:payments timeout calling db NOT retry
+```
+
+1. **HTTP Dispatch (`api_server.py`)**:
+   - The browser sends `GET /search?query=level:ERROR+service:payments+timeout+calling+db+NOT+retry&page=1&pageSize=100`.
+   - `LogLensRequestHandler.handle_search()` invokes `QueryEngine.search()`.
+   - Timer starts: `start_perf = time.perf_counter()`.
+
+2. **Query Decomposition (`query_parser.py`)**:
+   - Structured Filters extracted:
+     - `level` = `"ERROR"`
+     - `service` = `"payments"`
+   - Positive Tokens extracted:
+     - `and_tokens` = `['timeout', 'calling', 'db']`
+   - Negative Tokens extracted:
+     - `not_tokens` = `['retry']`
+
+3. **Candidate Gathering (`query_engine.py`)**:
+   - Engine fetches posting lists from index:
+     - `level_postings` = `structured_index.get_level_postings("ERROR")` (length ~48,000)
+     - `service_postings` = `structured_index.get_service_postings("payments")` (length ~125,000)
+     - `p_timeout` = `inverted_index.get_postings("timeout")` (length ~15,200)
+     - `p_calling` = `inverted_index.get_postings("calling")` (length ~15,200)
+     - `p_db` = `inverted_index.get_postings("db")` (length ~130,000)
+
+4. **Smallest-First Ordering**:
+   - Candidate lists sorted by length ascending:
+     `[p_timeout (15,200), p_calling (15,200), level_postings (48,000), service_postings (125,000), p_db (130,000)]`
+
+5. **Iterative Intersection**:
+   - `candidates` initialized to `p_timeout` (15,200 items).
+   - Intersect with `p_calling` -> candidates shrink to 15,200 (exact co-occurrence).
+   - Intersect with `level_postings` (ERROR) -> candidates shrink to ~3,200 items.
+   - Intersect with `service_postings` (payments) -> candidates shrink to ~450 items.
+   - Intersect with `p_db` -> candidates remain ~450 items.
+   - Total operations: < 25,000 integer comparisons (< 1.5 ms)!
+
+6. **Exclusion (NOT retry)**:
+   - `not_postings` for `"retry"` fetched (~15,000 items).
+   - `not_set = set(not_postings)`.
+   - Any candidate in `not_set` subtracted -> remaining candidates: 412 items.
+
+7. **Facet Counting & Pagination**:
+   - Matches: 412 total matches.
+   - Level counts: ERROR = 412, WARN = 0, INFO = 0.
+   - Slice for page 1 (items 0 to 100): `page_ids = candidates[0:100]`.
+
+8. **Disk Hydration (`line_store.py`)**:
+   - For each of the 100 line IDs, `LineStore` looks up `(file_id, byte_offset, byte_length)`.
+   - Reads exact bytes directly from disk: total disk time ~0.4 ms.
+   - Records parsed into display JSON.
+
+9. **Latency Capture & Response**:
+   - Timer stops: `query_ms = (time.perf_counter() - start_perf) * 1000.0` (e.g. 5.18 ms).
+   - Response serialized to JSON and delivered to browser.
+
+10. **Browser Rendering (`app.js`)**:
+    - HTML escaped: `escapeHtml(message)`.
+    - Matched tokens (`timeout`, `calling`, `db`) highlighted in yellow: `<mark class="query-highlight">`.
+    - Level badge rendered in red with text `"ERROR"`.
+    - Total matches and elapsed latency displayed on status strip.
+

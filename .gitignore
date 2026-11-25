@@ -18,11 +18,10 @@ htmlcov/
 # LogLens Data & Indices (keep small sample data, ignore generated benchmark logs and saved indices)
 data/benchmark_*.log
 data/large_*.log
+.loglens_index/
 *.idx
 *.index
 *.dat
-output/*.png
-output/*.csv
 
 # OS
 .DS_Store
