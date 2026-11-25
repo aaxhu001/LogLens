@@ -1,0 +1,8 @@
+2026-03-01T10:00:00Z INFO auth user logged in successfully
+INVALID_LINE_WITHOUT_TIMESTAMP ERROR payments timeout
+2026-03-01T10:05:00Z TRACE api trace debug info not valid level
+2026-03-01T10:10:00Z WARN db query completed in 500ms
+2026-99-99T99:99:99Z ERROR auth invalid calendar date in iso timestamp
+2026-03-01T10:20:00Z INFO
+   
+2026-03-01T10:25:00Z ERROR payments transaction failed after 3 retries

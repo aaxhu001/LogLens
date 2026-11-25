@@ -1,11 +1,1000 @@
-2026-03-01T10:16:23Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:16:31Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:16:41Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:16:46Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:17:20Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:18:19Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:19:14Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:20:14Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:20:27Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:20:35Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
-2026-03-01T10:21:16Z ['INFO', 'WARN', 'ERROR'] {'INFO': ['user logged in', 'order created', 'cache refreshed'], 'WARN': ['high memory usage', 'slow databse query', 'retrying request'], 'ERROR': ['timeout calling db after 3000ms', 'payment failed', 'connection refused']}
+2026-03-01T00:22:58Z INFO api cache refreshed for key user_profile
+2026-03-01T00:44:21Z INFO inventory health check ping response 200 ok
+2026-03-01T01:02:06Z INFO orders user logged in successfully session 865179
+2026-03-01T01:32:02Z WARN inventory deprecated api version v1 called by client client_14
+2026-03-01T01:47:34Z INFO api token verified for client application client_26
+2026-03-01T02:05:37Z INFO orders cache refreshed for key rate_limit
+2026-03-01T02:18:47Z INFO auth search query executed in 1088ms with 137 results
+2026-03-01T02:38:00Z WARN orders retrying request attempt 3 of 3 after transient network failure
+2026-03-01T02:48:29Z WARN orders circuit breaker half-open state for service notifications
+2026-03-01T03:03:54Z INFO api kafka event published to partition 8
+2026-03-01T03:20:48Z INFO api user logged in successfully session 174441
+2026-03-01T03:45:28Z INFO api background sync worker completed synchronization
+2026-03-01T03:56:46Z WARN auth circuit breaker half-open state for service billing
+2026-03-01T04:07:52Z WARN auth circuit breaker half-open state for service notifications
+2026-03-01T04:26:28Z ERROR notifications payment failed card expired or insufficient funds for order 5861
+2026-03-01T04:37:42Z WARN auth slow database query took 475ms on table transactions
+2026-03-01T04:52:35Z INFO orders background sync worker completed synchronization
+2026-03-01T05:20:24Z INFO orders database connection pool acquired lease
+2026-03-01T05:44:56Z INFO orders kafka event published to partition 0
+2026-03-01T05:58:17Z INFO payments order created with id 3442 total amount 289usd
+2026-03-01T06:12:36Z INFO inventory database connection pool acquired lease
+2026-03-01T06:28:03Z INFO payments background sync worker completed synchronization
+2026-03-01T06:57:38Z INFO inventory kafka event published to partition 1
+2026-03-01T07:16:30Z INFO api processed payment batch size 103
+2026-03-01T07:33:10Z INFO api search query executed in 2615ms with 103 results
+2026-03-01T07:59:05Z INFO notifications background sync worker completed synchronization
+2026-03-01T08:13:41Z INFO api background sync worker completed synchronization
+2026-03-01T08:41:46Z WARN inventory circuit breaker half-open state for service billing
+2026-03-01T09:08:35Z WARN notifications cache miss rate exceeded 20% in the last 5 minutes
+2026-03-01T09:25:07Z INFO api search query executed in 3489ms with 84 results
+2026-03-01T09:43:03Z WARN payments connection pool utilization at 88% capacity
+2026-03-01T10:01:55Z INFO inventory cache refreshed for key session_cache
+2026-03-01T10:13:00Z INFO search token verified for client application client_6
+2026-03-01T10:38:50Z INFO api health check ping response 200 ok
+2026-03-01T11:04:36Z INFO payments processed payment batch size 29
+2026-03-01T11:25:25Z INFO search user logged in successfully session 990844
+2026-03-01T11:47:55Z INFO notifications search query executed in 3842ms with 62 results
+2026-03-01T12:15:09Z INFO orders token verified for client application client_13
+2026-03-01T12:34:16Z INFO inventory health check ping response 200 ok
+2026-03-01T12:58:53Z INFO db health check ping response 200 ok
+2026-03-01T13:14:30Z INFO db background sync worker completed synchronization
+2026-03-01T13:32:39Z INFO payments cache refreshed for key session_cache
+2026-03-01T13:48:53Z INFO auth health check ping response 200 ok
+2026-03-01T14:04:50Z INFO notifications order created with id 4824 total amount 483usd
+2026-03-01T14:31:35Z INFO orders database connection pool acquired lease
+2026-03-01T14:59:36Z INFO payments order created with id 1339 total amount 401usd
+2026-03-01T15:22:28Z INFO search search query executed in 3522ms with 126 results
+2026-03-01T15:37:39Z INFO payments kafka event published to partition 0
+2026-03-01T15:56:33Z INFO api cache refreshed for key rate_limit
+2026-03-01T16:15:01Z INFO notifications kafka event published to partition 8
+2026-03-01T16:41:58Z INFO db background sync worker completed synchronization
+2026-03-01T17:09:19Z INFO notifications search query executed in 2869ms with 25 results
+2026-03-01T17:27:39Z INFO notifications processed payment batch size 94
+2026-03-01T17:50:28Z ERROR auth fatal unhandled exception in worker thread out of memory
+2026-03-01T18:03:29Z INFO db cache refreshed for key rate_limit
+2026-03-01T18:18:42Z WARN orders retrying request attempt 2 of 3 after transient network failure
+2026-03-01T18:33:34Z INFO orders user logged in successfully session 970357
+2026-03-01T18:56:10Z INFO db order created with id 1645 total amount 168usd
+2026-03-01T19:10:17Z WARN search deprecated api version v1 called by client client_48
+2026-03-01T19:39:52Z INFO inventory user logged in successfully session 377304
+2026-03-01T19:50:27Z INFO api order created with id 8606 total amount 475usd
+2026-03-01T20:05:16Z INFO search kafka event published to partition 4
+2026-03-01T20:34:31Z INFO search kafka event published to partition 1
+2026-03-01T21:04:32Z INFO api database connection pool acquired lease
+2026-03-01T21:17:16Z INFO search user logged in successfully session 282710
+2026-03-01T21:36:27Z INFO orders background sync worker completed synchronization
+2026-03-01T21:47:52Z INFO search search query executed in 3674ms with 25 results
+2026-03-01T22:06:17Z INFO auth token verified for client application client_10
+2026-03-01T22:32:44Z INFO search order created with id 6793 total amount 457usd
+2026-03-01T22:47:20Z WARN search slow database query took 365ms on table transactions
+2026-03-01T23:04:29Z INFO inventory order created with id 1502 total amount 56usd
+2026-03-01T23:32:22Z INFO payments order created with id 8259 total amount 348usd
+2026-03-01T23:48:10Z INFO orders user logged in successfully session 331230
+2026-03-02T00:08:16Z INFO api kafka event published to partition 7
+2026-03-02T00:32:39Z INFO payments token verified for client application client_28
+2026-03-02T01:00:17Z INFO db order created with id 2868 total amount 281usd
+2026-03-02T01:25:41Z INFO notifications background sync worker completed synchronization
+2026-03-02T01:47:42Z INFO notifications background sync worker completed synchronization
+2026-03-02T02:04:15Z INFO payments background sync worker completed synchronization
+2026-03-02T02:21:40Z INFO search database connection pool acquired lease
+2026-03-02T02:50:14Z INFO inventory cache refreshed for key rate_limit
+2026-03-02T03:03:57Z WARN notifications circuit breaker half-open state for service inventory
+2026-03-02T03:17:08Z INFO db background sync worker completed synchronization
+2026-03-02T03:34:38Z ERROR notifications deadlock detected on table transactions transaction aborted
+2026-03-02T03:50:28Z INFO db search query executed in 3548ms with 13 results
+2026-03-02T04:08:06Z WARN search retrying request attempt 2 of 3 after transient network failure
+2026-03-02T04:29:14Z INFO auth processed payment batch size 71
+2026-03-02T04:53:48Z INFO search health check ping response 200 ok
+2026-03-02T05:16:42Z INFO payments token verified for client application client_43
+2026-03-02T05:43:11Z INFO notifications background sync worker completed synchronization
+2026-03-02T06:12:05Z ERROR notifications deadlock detected on table audit_log transaction aborted
+2026-03-02T06:40:12Z ERROR notifications upstream service gateway timeout 504 from inventory
+2026-03-02T06:56:53Z INFO inventory cache refreshed for key rate_limit
+2026-03-02T07:14:17Z INFO payments cache refreshed for key session_cache
+2026-03-02T07:43:30Z INFO db kafka event published to partition 7
+2026-03-02T08:09:12Z INFO orders background sync worker completed synchronization
+2026-03-02T08:37:15Z INFO db token verified for client application client_16
+2026-03-02T08:59:40Z INFO notifications kafka event published to partition 7
+2026-03-02T09:25:14Z INFO payments order created with id 3507 total amount 165usd
+2026-03-02T09:37:50Z INFO db database connection pool acquired lease
+2026-03-02T10:00:22Z WARN orders deprecated api version v1 called by client client_30
+2026-03-02T10:17:19Z WARN search rate limit approaching 90% quota for client client_36
+2026-03-02T10:30:14Z WARN inventory circuit breaker half-open state for service notifications
+2026-03-02T10:42:08Z INFO api health check ping response 200 ok
+2026-03-02T11:06:52Z INFO inventory user logged in successfully session 697983
+2026-03-02T11:24:29Z INFO search cache refreshed for key user_profile
+2026-03-02T11:41:10Z INFO orders database connection pool acquired lease
+2026-03-02T12:03:01Z INFO payments database connection pool acquired lease
+2026-03-02T12:13:44Z INFO payments background sync worker completed synchronization
+2026-03-02T12:43:56Z INFO db background sync worker completed synchronization
+2026-03-02T13:13:00Z INFO api background sync worker completed synchronization
+2026-03-02T13:30:03Z INFO notifications health check ping response 200 ok
+2026-03-02T13:42:09Z INFO db user logged in successfully session 677086
+2026-03-02T14:03:02Z WARN db connection pool utilization at 88% capacity
+2026-03-02T14:31:49Z INFO notifications cache refreshed for key catalog_item
+2026-03-02T14:57:51Z INFO db database connection pool acquired lease
+2026-03-02T15:08:04Z INFO orders token verified for client application client_16
+2026-03-02T15:32:04Z WARN search circuit breaker half-open state for service billing
+2026-03-02T15:52:44Z INFO auth user logged in successfully session 969032
+2026-03-02T16:17:16Z WARN notifications high memory usage threshold 85% reached in pod pod-5
+2026-03-02T16:42:23Z INFO search order created with id 1987 total amount 488usd
+2026-03-02T17:10:00Z INFO db token verified for client application client_9
+2026-03-02T17:30:48Z INFO search cache refreshed for key user_profile
+2026-03-02T17:49:53Z WARN api high memory usage threshold 85% reached in pod pod-10
+2026-03-02T18:04:44Z ERROR api fatal unhandled exception in worker thread out of memory
+2026-03-02T18:30:39Z INFO db processed payment batch size 71
+2026-03-02T18:48:34Z INFO auth background sync worker completed synchronization
+2026-03-02T19:04:45Z INFO api order created with id 8846 total amount 478usd
+2026-03-02T19:25:36Z INFO notifications background sync worker completed synchronization
+2026-03-02T19:40:56Z INFO inventory processed payment batch size 107
+2026-03-02T20:00:18Z INFO db kafka event published to partition 0
+2026-03-02T20:24:38Z INFO search user logged in successfully session 747847
+2026-03-02T20:44:51Z INFO db order created with id 9591 total amount 86usd
+2026-03-02T21:04:11Z INFO orders order created with id 1519 total amount 57usd
+2026-03-02T21:25:40Z INFO payments health check ping response 200 ok
+2026-03-02T21:50:55Z INFO auth processed payment batch size 183
+2026-03-02T22:05:40Z INFO inventory token verified for client application client_15
+2026-03-02T22:17:29Z INFO auth order created with id 3526 total amount 204usd
+2026-03-02T22:42:54Z INFO inventory background sync worker completed synchronization
+2026-03-02T23:01:20Z INFO api database connection pool acquired lease
+2026-03-02T23:16:58Z INFO search processed payment batch size 127
+2026-03-02T23:35:56Z WARN db deprecated api version v1 called by client client_26
+2026-03-03T00:02:28Z INFO api database connection pool acquired lease
+2026-03-03T00:25:19Z INFO inventory search query executed in 4300ms with 107 results
+2026-03-03T00:37:36Z INFO db database connection pool acquired lease
+2026-03-03T00:57:01Z INFO db token verified for client application client_6
+2026-03-03T01:14:07Z INFO notifications token verified for client application client_22
+2026-03-03T01:35:29Z INFO inventory cache refreshed for key user_profile
+2026-03-03T01:51:11Z INFO auth kafka event published to partition 8
+2026-03-03T02:08:16Z INFO orders database connection pool acquired lease
+2026-03-03T02:26:47Z INFO db background sync worker completed synchronization
+2026-03-03T02:54:19Z INFO api search query executed in 4178ms with 106 results
+2026-03-03T03:20:26Z INFO api kafka event published to partition 8
+2026-03-03T03:41:27Z INFO notifications kafka event published to partition 5
+2026-03-03T04:07:52Z INFO inventory cache refreshed for key session_cache
+2026-03-03T04:23:47Z WARN auth retrying request attempt 1 of 3 after transient network failure
+2026-03-03T04:43:44Z INFO inventory search query executed in 2429ms with 94 results
+2026-03-03T05:08:33Z INFO search order created with id 9756 total amount 213usd
+2026-03-03T05:30:02Z INFO payments user logged in successfully session 204411
+2026-03-03T05:57:45Z INFO search processed payment batch size 23
+2026-03-03T06:09:24Z INFO notifications user logged in successfully session 108454
+2026-03-03T06:21:33Z INFO inventory cache refreshed for key user_profile
+2026-03-03T06:48:58Z INFO auth database connection pool acquired lease
+2026-03-03T07:03:12Z INFO inventory processed payment batch size 136
+2026-03-03T07:32:06Z WARN inventory rate limit approaching 90% quota for client client_2
+2026-03-03T07:54:51Z INFO inventory order created with id 9791 total amount 285usd
+2026-03-03T08:16:46Z INFO auth processed payment batch size 24
+2026-03-03T08:29:15Z INFO db background sync worker completed synchronization
+2026-03-03T08:44:38Z INFO notifications background sync worker completed synchronization
+2026-03-03T08:55:36Z INFO notifications token verified for client application client_46
+2026-03-03T09:22:20Z INFO payments cache refreshed for key rate_limit
+2026-03-03T09:38:17Z INFO api background sync worker completed synchronization
+2026-03-03T10:01:11Z INFO search user logged in successfully session 895794
+2026-03-03T10:13:09Z WARN inventory rate limit approaching 90% quota for client client_9
+2026-03-03T10:40:23Z INFO search token verified for client application client_9
+2026-03-03T10:52:53Z INFO notifications processed payment batch size 33
+2026-03-03T11:22:30Z INFO orders processed payment batch size 125
+2026-03-03T11:49:19Z INFO inventory token verified for client application client_2
+2026-03-03T12:18:23Z WARN inventory connection pool utilization at 88% capacity
+2026-03-03T12:41:31Z WARN notifications high memory usage threshold 85% reached in pod pod-1
+2026-03-03T13:02:35Z WARN search connection pool utilization at 88% capacity
+2026-03-03T13:14:41Z INFO payments health check ping response 200 ok
+2026-03-03T13:35:41Z INFO payments health check ping response 200 ok
+2026-03-03T13:57:35Z INFO search order created with id 7481 total amount 310usd
+2026-03-03T14:21:56Z WARN search circuit breaker half-open state for service inventory
+2026-03-03T14:44:09Z ERROR api connection refused on port 6379 during upstream dispatch
+2026-03-03T14:59:16Z INFO auth user logged in successfully session 150486
+2026-03-03T15:12:37Z WARN orders high memory usage threshold 85% reached in pod pod-2
+2026-03-03T15:36:54Z INFO inventory cache refreshed for key session_cache
+2026-03-03T15:50:05Z INFO orders database connection pool acquired lease
+2026-03-03T16:18:12Z INFO inventory cache refreshed for key session_cache
+2026-03-03T16:31:20Z INFO search kafka event published to partition 7
+2026-03-03T16:49:22Z INFO db order created with id 8357 total amount 98usd
+2026-03-03T17:16:16Z WARN auth slow database query took 3903ms on table users
+2026-03-03T17:37:46Z ERROR auth connection refused on port 8080 during upstream dispatch
+2026-03-03T17:55:58Z INFO inventory user logged in successfully session 515018
+2026-03-03T18:23:02Z INFO api cache refreshed for key catalog_item
+2026-03-03T18:48:26Z WARN db slow database query took 387ms on table users
+2026-03-03T18:59:32Z INFO search background sync worker completed synchronization
+2026-03-03T19:16:33Z INFO auth processed payment batch size 156
+2026-03-03T19:44:04Z INFO notifications cache refreshed for key user_profile
+2026-03-03T20:03:33Z WARN inventory slow database query took 2465ms on table users
+2026-03-03T20:31:00Z INFO orders health check ping response 200 ok
+2026-03-03T20:49:14Z INFO api token verified for client application client_23
+2026-03-03T21:01:54Z WARN db rate limit approaching 90% quota for client client_48
+2026-03-03T21:29:08Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-03T21:42:06Z INFO auth background sync worker completed synchronization
+2026-03-03T22:04:34Z INFO notifications search query executed in 265ms with 82 results
+2026-03-03T22:19:13Z INFO auth search query executed in 2532ms with 116 results
+2026-03-03T22:36:12Z INFO api cache refreshed for key session_cache
+2026-03-03T22:53:51Z INFO payments database connection pool acquired lease
+2026-03-03T23:18:05Z INFO payments processed payment batch size 169
+2026-03-03T23:38:11Z INFO api token verified for client application client_36
+2026-03-04T00:06:33Z ERROR db connection refused on port 6379 during upstream dispatch
+2026-03-04T00:34:15Z INFO search search query executed in 1546ms with 84 results
+2026-03-04T01:00:46Z INFO notifications processed payment batch size 117
+2026-03-04T01:27:01Z INFO inventory token verified for client application client_32
+2026-03-04T01:37:21Z WARN api rate limit approaching 90% quota for client client_43
+2026-03-04T01:47:40Z WARN notifications cache miss rate exceeded 20% in the last 5 minutes
+2026-03-04T02:05:52Z WARN notifications slow database query took 295ms on table users
+2026-03-04T02:32:36Z ERROR orders authentication signature mismatch for bearer token
+2026-03-04T02:57:07Z ERROR api timeout calling db after 3000ms on table audit_log
+2026-03-04T03:09:21Z INFO inventory health check ping response 200 ok
+MALFORMED_LINE_NO_TIMESTAMP ERROR payments connection dropped
+2026-03-04T04:00:06Z WARN db retrying request attempt 2 of 3 after transient network failure
+2026-03-04T04:29:45Z INFO inventory database connection pool acquired lease
+2026-03-04T04:59:36Z ERROR search connection refused on port 5432 during upstream dispatch
+2026-03-04T05:17:22Z INFO orders cache refreshed for key user_profile
+2026-03-04T05:42:25Z INFO orders user logged in successfully session 500118
+2026-03-04T06:07:43Z ERROR api deadlock detected on table audit_log transaction aborted
+2026-03-04T06:20:25Z INFO search background sync worker completed synchronization
+2026-03-04T06:41:05Z WARN db connection pool utilization at 88% capacity
+2026-03-04T07:11:16Z ERROR payments connection refused on port 8080 during upstream dispatch
+2026-03-04T07:21:50Z ERROR notifications upstream service gateway timeout 504 from inventory
+2026-03-04T07:45:26Z ERROR inventory connection refused on port 5432 during upstream dispatch
+2026-03-04T07:59:06Z INFO api processed payment batch size 120
+2026-03-04T08:24:25Z ERROR auth cache node unresponsive after 2 retries
+2026-03-04T08:37:15Z ERROR orders payment failed card expired or insufficient funds for order 7113
+2026-03-04T08:53:28Z ERROR search authentication signature mismatch for bearer token
+2026-03-04T09:09:25Z INFO notifications token verified for client application client_19
+2026-03-04T09:33:28Z WARN search connection pool utilization at 88% capacity
+2026-03-04T09:50:47Z WARN db slow database query took 2306ms on table users
+2026-03-04T10:16:22Z INFO orders kafka event published to partition 4
+2026-03-04T10:34:27Z ERROR db payment failed card expired or insufficient funds for order 3608
+2026-03-04T10:51:59Z INFO search search query executed in 2804ms with 26 results
+2026-03-04T11:09:39Z WARN auth deprecated api version v1 called by client client_23
+2026-03-04T11:21:17Z INFO db cache refreshed for key session_cache
+2026-03-04T11:31:49Z WARN db retrying request attempt 3 of 3 after transient network failure
+2026-03-04T12:01:00Z ERROR notifications upstream service gateway timeout 504 from billing
+2026-03-04T12:15:43Z INFO api kafka event published to partition 0
+2026-03-04T12:43:58Z INFO inventory kafka event published to partition 7
+2026-03-04T13:02:38Z ERROR auth deadlock detected on table users transaction aborted
+2026-03-04T13:26:35Z INFO db search query executed in 2407ms with 101 results
+2026-03-04T13:41:46Z INFO inventory cache refreshed for key session_cache
+2026-03-04T13:55:06Z INFO auth cache refreshed for key user_profile
+2026-03-04T14:19:31Z ERROR db upstream service gateway timeout 504 from inventory
+2026-03-04T14:34:25Z INVALID_LEVEL auth user auth failed unexpected status
+2026-03-04T14:46:15Z INFO inventory search query executed in 712ms with 23 results
+2026-03-04T15:08:33Z ERROR payments deadlock detected on table transactions transaction aborted
+2026-03-04T15:32:38Z WARN api rate limit approaching 90% quota for client client_2
+2026-03-04T15:58:51Z INFO payments processed payment batch size 182
+2026-03-04T16:26:57Z ERROR api upstream service gateway timeout 504 from inventory
+2026-03-04T16:55:35Z ERROR payments timeout calling db after 3000ms on table transactions
+2026-03-04T17:06:45Z WARN payments rate limit approaching 90% quota for client client_34
+2026-03-04T17:23:24Z INFO orders health check ping response 200 ok
+2026-03-04T17:42:34Z ERROR api connection refused on port 9092 during upstream dispatch
+2026-03-04T18:02:43Z ERROR search upstream service gateway timeout 504 from inventory
+2026-03-04T18:27:48Z INFO orders token verified for client application client_39
+2026-03-04T18:53:30Z INFO orders background sync worker completed synchronization
+2026-03-04T19:09:54Z ERROR inventory deadlock detected on table transactions transaction aborted
+2026-03-04T19:24:14Z INFO notifications kafka event published to partition 4
+2026-03-04T19:40:33Z INFO db cache refreshed for key user_profile
+2026-03-04T20:10:10Z INFO notifications database connection pool acquired lease
+2026-03-04T20:26:22Z INVALID_LEVEL auth user auth failed unexpected status
+2026-03-04T20:43:23Z INFO notifications background sync worker completed synchronization
+2026-03-04T21:01:25Z ERROR inventory fatal unhandled exception in worker thread out of memory
+2026-03-04T21:15:11Z ERROR notifications deadlock detected on table users transaction aborted
+2026-03-04T21:39:41Z INFO db user logged in successfully session 617555
+2026-03-04T22:05:24Z WARN api deprecated api version v1 called by client client_50
+2026-03-04T22:25:59Z WARN orders rate limit approaching 90% quota for client client_31
+2026-03-04T22:42:36Z INFO auth search query executed in 4043ms with 39 results
+2026-03-04T23:06:31Z ERROR payments timeout calling db after 3000ms on table audit_log
+2026-03-04T23:30:29Z INFO payments background sync worker completed synchronization
+2026-03-04T23:46:07Z ERROR db connection refused on port 5432 during upstream dispatch
+2026-03-05T00:08:42Z INFO search order created with id 9830 total amount 429usd
+2026-03-05T00:21:00Z INFO db cache refreshed for key rate_limit
+2026-03-05T00:43:18Z WARN api cache miss rate exceeded 20% in the last 5 minutes
+2026-03-05T01:10:12Z INFO auth order created with id 4784 total amount 282usd
+2026-03-05T01:33:53Z INFO auth cache refreshed for key rate_limit
+2026-03-05T01:52:16Z WARN search circuit breaker half-open state for service billing
+2026-03-05T02:22:10Z INFO orders user logged in successfully session 414922
+2026-03-05T02:39:25Z INFO api health check ping response 200 ok
+2026-03-05T03:01:30Z INFO inventory order created with id 1916 total amount 481usd
+2026-03-05T03:12:40Z INFO db token verified for client application client_47
+2026-03-05T03:25:44Z INFO payments kafka event published to partition 7
+2026-03-05T03:47:07Z INFO api order created with id 8046 total amount 175usd
+2026-03-05T04:12:43Z INFO notifications database connection pool acquired lease
+2026-03-05T04:40:19Z INFO auth processed payment batch size 63
+2026-03-05T05:04:24Z INFO payments processed payment batch size 188
+2026-03-05T05:27:51Z INFO auth user logged in successfully session 406703
+2026-03-05T05:49:14Z INFO orders token verified for client application client_23
+2026-03-05T06:17:02Z WARN payments deprecated api version v1 called by client client_9
+2026-03-05T06:35:42Z INFO notifications kafka event published to partition 4
+2026-03-05T06:52:11Z WARN auth retrying request attempt 1 of 3 after transient network failure
+2026-03-05T07:06:00Z INFO orders database connection pool acquired lease
+2026-03-05T07:30:26Z WARN notifications cache miss rate exceeded 20% in the last 5 minutes
+2026-03-05T07:59:12Z WARN notifications rate limit approaching 90% quota for client client_39
+2026-03-05T08:18:29Z WARN api connection pool utilization at 88% capacity
+2026-03-05T08:31:55Z WARN db cache miss rate exceeded 20% in the last 5 minutes
+2026-03-05T08:53:54Z INFO notifications order created with id 6309 total amount 364usd
+2026-03-05T09:18:38Z INFO db search query executed in 1379ms with 41 results
+2026-03-05T09:43:26Z INFO db order created with id 4323 total amount 11usd
+2026-03-05T10:02:40Z INFO payments health check ping response 200 ok
+2026-03-05T10:19:25Z INFO db cache refreshed for key session_cache
+2026-03-05T10:44:48Z INFO notifications cache refreshed for key rate_limit
+2026-03-05T11:03:29Z INFO search cache refreshed for key rate_limit
+2026-03-05T11:28:26Z INFO inventory search query executed in 1798ms with 72 results
+2026-03-05T11:53:58Z INFO inventory database connection pool acquired lease
+2026-03-05T12:22:02Z INFO inventory user logged in successfully session 975671
+2026-03-05T12:38:57Z INFO db database connection pool acquired lease
+2026-03-05T12:58:09Z INFO orders cache refreshed for key user_profile
+2026-03-05T13:22:59Z INFO db order created with id 9456 total amount 356usd
+2026-03-05T13:46:55Z INFO notifications user logged in successfully session 208111
+2026-03-05T14:12:35Z INFO db processed payment batch size 62
+2026-03-05T14:26:07Z WARN notifications high memory usage threshold 85% reached in pod pod-7
+2026-03-05T14:48:37Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-05T15:17:06Z INFO search token verified for client application client_8
+2026-03-05T15:37:25Z INFO auth token verified for client application client_30
+2026-03-05T15:55:14Z WARN inventory connection pool utilization at 88% capacity
+2026-03-05T16:21:53Z ERROR auth connection refused on port 6379 during upstream dispatch
+2026-03-05T16:41:06Z INFO notifications health check ping response 200 ok
+2026-03-05T16:58:38Z INFO search order created with id 1510 total amount 130usd
+2026-03-05T17:22:04Z INFO inventory token verified for client application client_9
+2026-03-05T17:51:48Z INFO inventory background sync worker completed synchronization
+2026-03-05T18:14:04Z WARN api deprecated api version v1 called by client client_3
+2026-03-05T18:38:52Z WARN orders cache miss rate exceeded 20% in the last 5 minutes
+2026-03-05T18:58:24Z INFO search search query executed in 2640ms with 144 results
+2026-03-05T19:21:43Z INFO payments processed payment batch size 81
+2026-03-05T19:50:08Z INFO search cache refreshed for key session_cache
+2026-03-05T20:05:01Z INFO api database connection pool acquired lease
+2026-03-05T20:22:45Z INFO db kafka event published to partition 0
+2026-03-05T20:39:35Z INFO inventory background sync worker completed synchronization
+2026-03-05T20:51:38Z INFO api processed payment batch size 168
+2026-03-05T21:14:57Z INFO db order created with id 4018 total amount 139usd
+2026-03-05T21:30:37Z INFO payments processed payment batch size 27
+2026-03-05T21:45:06Z WARN orders slow database query took 4227ms on table audit_log
+2026-03-05T22:13:25Z INFO notifications background sync worker completed synchronization
+2026-03-05T22:31:34Z ERROR auth cache node unresponsive after 3 retries
+2026-03-05T22:55:41Z INFO search background sync worker completed synchronization
+2026-03-05T23:15:50Z WARN payments high memory usage threshold 85% reached in pod pod-9
+2026-03-05T23:44:34Z INFO payments background sync worker completed synchronization
+2026-03-05T23:56:57Z INFO auth health check ping response 200 ok
+2026-03-06T00:12:33Z INFO search kafka event published to partition 0
+2026-03-06T00:41:18Z INFO orders search query executed in 2369ms with 133 results
+2026-03-06T01:03:24Z INFO auth processed payment batch size 59
+2026-03-06T01:19:03Z INFO notifications background sync worker completed synchronization
+2026-03-06T01:30:00Z WARN db retrying request attempt 3 of 3 after transient network failure
+2026-03-06T01:44:43Z INFO api search query executed in 4118ms with 13 results
+2026-03-06T02:02:37Z INFO search processed payment batch size 187
+2026-03-06T02:28:01Z INFO db database connection pool acquired lease
+2026-03-06T02:43:06Z INFO db database connection pool acquired lease
+2026-03-06T03:02:18Z INFO payments search query executed in 893ms with 4 results
+2026-03-06T03:32:04Z INFO inventory cache refreshed for key rate_limit
+2026-03-06T03:56:13Z INFO api order created with id 6500 total amount 386usd
+2026-03-06T04:13:40Z INFO auth kafka event published to partition 3
+2026-03-06T04:29:20Z INFO notifications kafka event published to partition 3
+2026-03-06T04:45:13Z INFO orders order created with id 3424 total amount 264usd
+2026-03-06T05:04:15Z INFO auth user logged in successfully session 940946
+2026-03-06T05:32:26Z INFO api background sync worker completed synchronization
+2026-03-06T05:46:12Z INFO db cache refreshed for key catalog_item
+2026-03-06T06:09:42Z INFO notifications kafka event published to partition 7
+2026-03-06T06:32:49Z WARN db cache miss rate exceeded 20% in the last 5 minutes
+2026-03-06T06:49:29Z INFO api processed payment batch size 183
+2026-03-06T07:17:53Z INFO inventory token verified for client application client_23
+2026-03-06T07:44:09Z WARN inventory connection pool utilization at 88% capacity
+2026-03-06T08:07:07Z INFO notifications database connection pool acquired lease
+2026-03-06T08:21:43Z INFO orders background sync worker completed synchronization
+2026-03-06T08:43:31Z WARN notifications slow database query took 629ms on table orders
+2026-03-06T08:59:06Z WARN search high memory usage threshold 85% reached in pod pod-9
+2026-03-06T09:14:39Z INFO search cache refreshed for key catalog_item
+2026-03-06T09:41:29Z INFO auth search query executed in 3002ms with 79 results
+2026-03-06T09:55:03Z INFO auth health check ping response 200 ok
+2026-03-06T10:20:23Z INFO payments background sync worker completed synchronization
+2026-03-06T10:43:59Z INFO orders database connection pool acquired lease
+2026-03-06T10:57:32Z INFO auth health check ping response 200 ok
+2026-03-06T11:15:50Z INFO notifications order created with id 3226 total amount 263usd
+2026-03-06T11:38:01Z ERROR notifications authentication signature mismatch for bearer token
+2026-03-06T11:56:55Z INFO db search query executed in 1780ms with 86 results
+2026-03-06T12:21:37Z INFO orders search query executed in 2434ms with 37 results
+2026-03-06T12:36:22Z INFO payments order created with id 1438 total amount 101usd
+2026-03-06T13:02:25Z INFO notifications kafka event published to partition 7
+2026-03-06T13:13:10Z WARN orders retrying request attempt 2 of 3 after transient network failure
+2026-03-06T13:33:27Z INFO inventory database connection pool acquired lease
+2026-03-06T13:58:58Z INFO inventory token verified for client application client_16
+2026-03-06T14:11:21Z INFO payments background sync worker completed synchronization
+2026-03-06T14:32:58Z INFO api token verified for client application client_40
+2026-03-06T14:48:51Z ERROR inventory authentication signature mismatch for bearer token
+2026-03-06T15:12:04Z WARN inventory rate limit approaching 90% quota for client client_33
+2026-03-06T15:35:28Z WARN orders connection pool utilization at 88% capacity
+2026-03-06T15:58:19Z INFO orders cache refreshed for key session_cache
+2026-03-06T16:16:55Z INFO orders cache refreshed for key catalog_item
+2026-03-06T16:44:28Z INFO search order created with id 3302 total amount 130usd
+2026-03-06T17:06:39Z INFO inventory health check ping response 200 ok
+2026-03-06T17:30:50Z INFO notifications health check ping response 200 ok
+2026-03-06T17:47:09Z INFO auth kafka event published to partition 3
+2026-03-06T18:14:57Z INFO payments processed payment batch size 95
+2026-03-06T18:34:10Z INFO db background sync worker completed synchronization
+2026-03-06T19:01:20Z INFO search background sync worker completed synchronization
+2026-03-06T19:29:05Z WARN api high memory usage threshold 85% reached in pod pod-7
+2026-03-06T19:40:57Z WARN auth high memory usage threshold 85% reached in pod pod-4
+2026-03-06T19:58:44Z INFO api processed payment batch size 114
+2026-03-06T20:10:33Z WARN inventory circuit breaker half-open state for service notifications
+2026-03-06T20:30:07Z INFO payments user logged in successfully session 365978
+2026-03-06T20:58:57Z INFO search kafka event published to partition 4
+2026-03-06T21:19:27Z INFO notifications cache refreshed for key session_cache
+2026-03-06T21:38:20Z WARN payments cache miss rate exceeded 20% in the last 5 minutes
+2026-03-06T22:03:32Z INFO api database connection pool acquired lease
+2026-03-06T22:21:33Z ERROR search payment failed card expired or insufficient funds for order 2328
+2026-03-06T22:35:54Z INFO search user logged in successfully session 879930
+2026-03-06T22:53:49Z INFO db order created with id 9042 total amount 420usd
+2026-03-06T23:13:30Z INFO inventory token verified for client application client_3
+2026-03-06T23:29:26Z WARN notifications deprecated api version v1 called by client client_34
+2026-03-06T23:49:49Z INFO orders token verified for client application client_48
+2026-03-07T00:06:13Z INFO notifications database connection pool acquired lease
+2026-03-07T00:16:34Z INFO inventory database connection pool acquired lease
+2026-03-07T00:43:06Z INFO payments health check ping response 200 ok
+2026-03-07T00:55:32Z INFO notifications background sync worker completed synchronization
+2026-03-07T01:25:21Z INFO orders user logged in successfully session 611177
+2026-03-07T01:53:26Z INFO notifications database connection pool acquired lease
+2026-03-07T02:15:22Z WARN notifications retrying request attempt 1 of 3 after transient network failure
+2026-03-07T02:37:39Z INFO notifications processed payment batch size 14
+2026-03-07T02:50:02Z INFO notifications processed payment batch size 152
+2026-03-07T03:15:52Z WARN auth high memory usage threshold 85% reached in pod pod-9
+2026-03-07T03:39:00Z INFO api background sync worker completed synchronization
+2026-03-07T04:01:46Z INFO inventory health check ping response 200 ok
+2026-03-07T04:13:33Z ERROR db fatal unhandled exception in worker thread out of memory
+2026-03-07T04:38:11Z INFO orders kafka event published to partition 7
+2026-03-07T04:49:00Z INFO db kafka event published to partition 5
+2026-03-07T05:03:57Z INFO auth user logged in successfully session 982464
+2026-03-07T05:30:16Z INFO api token verified for client application client_25
+2026-03-07T05:43:18Z INFO auth user logged in successfully session 545526
+2026-03-07T06:06:13Z INFO notifications search query executed in 3899ms with 33 results
+2026-03-07T06:25:50Z WARN search slow database query took 2522ms on table users
+2026-03-07T06:42:02Z INFO db database connection pool acquired lease
+2026-03-07T07:01:48Z INFO search search query executed in 3925ms with 115 results
+2026-03-07T07:19:42Z INFO payments background sync worker completed synchronization
+2026-03-07T07:33:39Z INFO payments database connection pool acquired lease
+2026-03-07T07:45:26Z INFO payments background sync worker completed synchronization
+2026-03-07T08:01:16Z INFO db processed payment batch size 56
+2026-03-07T08:16:33Z WARN payments circuit breaker half-open state for service notifications
+2026-03-07T08:34:51Z WARN orders slow database query took 4249ms on table orders
+2026-03-07T09:04:19Z INFO notifications database connection pool acquired lease
+2026-03-07T09:20:27Z INFO db kafka event published to partition 4
+2026-03-07T09:49:52Z WARN db high memory usage threshold 85% reached in pod pod-7
+2026-03-07T10:10:48Z WARN notifications slow database query took 219ms on table orders
+2026-03-07T10:35:52Z INFO search health check ping response 200 ok
+2026-03-07T10:48:11Z INFO db kafka event published to partition 3
+2026-03-07T11:18:16Z INFO orders kafka event published to partition 6
+2026-03-07T11:38:20Z INFO api user logged in successfully session 391433
+2026-03-07T12:07:43Z INFO search processed payment batch size 120
+2026-03-07T12:34:22Z INFO auth database connection pool acquired lease
+2026-03-07T13:00:13Z WARN payments deprecated api version v1 called by client client_4
+2026-03-07T13:27:44Z INFO notifications search query executed in 362ms with 116 results
+2026-03-07T13:49:49Z INFO api database connection pool acquired lease
+2026-03-07T14:11:40Z INFO search processed payment batch size 47
+2026-03-07T14:22:55Z WARN payments connection pool utilization at 88% capacity
+2026-03-07T14:45:25Z INFO notifications user logged in successfully session 620021
+2026-03-07T14:59:38Z ERROR search timeout calling db after 3000ms on table users
+2026-03-07T15:13:13Z INFO search kafka event published to partition 2
+2026-03-07T15:32:30Z INFO db kafka event published to partition 3
+2026-03-07T15:54:40Z INFO payments database connection pool acquired lease
+2026-03-07T16:20:34Z INFO db kafka event published to partition 5
+2026-03-07T16:36:03Z WARN payments circuit breaker half-open state for service notifications
+2026-03-07T16:48:50Z INFO search health check ping response 200 ok
+2026-03-07T16:59:25Z INFO auth token verified for client application client_15
+2026-03-07T17:13:28Z INFO orders health check ping response 200 ok
+2026-03-07T17:33:04Z INFO db search query executed in 4375ms with 150 results
+2026-03-07T18:00:11Z WARN inventory circuit breaker half-open state for service inventory
+2026-03-07T18:18:51Z INFO orders token verified for client application client_10
+2026-03-07T18:32:44Z INFO notifications processed payment batch size 18
+2026-03-07T18:47:30Z INFO payments token verified for client application client_26
+2026-03-07T19:05:26Z INFO api processed payment batch size 160
+2026-03-07T19:32:08Z INFO search database connection pool acquired lease
+2026-03-07T19:47:14Z INFO notifications search query executed in 507ms with 61 results
+2026-03-07T20:15:38Z INFO auth token verified for client application client_29
+2026-03-07T20:38:36Z INFO search search query executed in 1089ms with 34 results
+2026-03-07T20:59:44Z ERROR db upstream service gateway timeout 504 from inventory
+2026-03-07T21:23:28Z INFO api user logged in successfully session 807835
+2026-03-07T21:34:32Z INFO api token verified for client application client_2
+2026-03-07T21:59:12Z INFO search token verified for client application client_26
+2026-03-07T22:09:35Z INFO api background sync worker completed synchronization
+2026-03-07T22:39:29Z INFO db processed payment batch size 183
+2026-03-07T23:01:50Z INFO api kafka event published to partition 3
+2026-03-07T23:14:41Z INFO inventory health check ping response 200 ok
+2026-03-07T23:29:23Z INFO api kafka event published to partition 2
+2026-03-07T23:58:41Z ERROR api payment failed card expired or insufficient funds for order 3845
+2026-03-08T00:17:19Z INFO notifications health check ping response 200 ok
+2026-03-08T00:42:46Z INFO orders database connection pool acquired lease
+2026-03-08T00:54:17Z WARN db circuit breaker half-open state for service billing
+2026-03-08T01:12:37Z ERROR inventory payment failed card expired or insufficient funds for order 8148
+2026-03-08T01:27:35Z ERROR payments payment failed card expired or insufficient funds for order 8462
+2026-03-08T01:48:07Z INFO inventory processed payment batch size 160
+2026-03-08T02:16:56Z INFO db background sync worker completed synchronization
+2026-03-08T02:31:01Z ERROR notifications authentication signature mismatch for bearer token
+2026-03-08T02:43:36Z INFO api background sync worker completed synchronization
+2026-03-08T03:05:50Z ERROR notifications upstream service gateway timeout 504 from billing
+2026-03-08T03:35:35Z ERROR payments upstream service gateway timeout 504 from billing
+2026-03-08T03:56:03Z INFO search user logged in successfully session 764563
+2026-03-08T04:26:01Z ERROR inventory deadlock detected on table users transaction aborted
+2026-03-08T04:39:29Z INFO api health check ping response 200 ok
+2026-03-08T05:03:00Z ERROR db upstream service gateway timeout 504 from inventory
+2026-03-08T05:15:24Z INFO api order created with id 7025 total amount 75usd
+2026-03-08T05:41:02Z ERROR db authentication signature mismatch for bearer token
+2026-03-08T06:06:10Z ERROR payments cache node unresponsive after 1 retries
+2026-03-08T06:32:57Z ERROR api timeout calling db after 3000ms on table audit_log
+2026-03-08T07:02:59Z INFO orders processed payment batch size 34
+2026-03-08T07:21:59Z ERROR api authentication signature mismatch for bearer token
+2026-03-08T07:51:42Z INFO search database connection pool acquired lease
+2026-03-08T08:14:56Z ERROR auth upstream service gateway timeout 504 from billing
+2026-03-08T08:25:29Z WARN orders slow database query took 3702ms on table transactions
+2026-03-08T08:43:44Z INFO notifications order created with id 9830 total amount 375usd
+2026-03-08T08:56:25Z INFO orders user logged in successfully session 188720
+2026-03-08T09:19:47Z WARN search rate limit approaching 90% quota for client client_7
+2026-03-08T09:42:00Z INFO db database connection pool acquired lease
+2026-03-08T10:02:53Z ERROR api cache node unresponsive after 1 retries
+2026-03-08T10:23:41Z INFO search order created with id 6464 total amount 408usd
+2026-03-08T10:37:18Z INFO notifications order created with id 6716 total amount 368usd
+2026-03-08T10:57:00Z INFO db cache refreshed for key catalog_item
+2026-03-08T11:17:12Z INFO api processed payment batch size 114
+2026-03-08T11:28:59Z ERROR payments fatal unhandled exception in worker thread out of memory
+2026-03-08T11:53:28Z ERROR api timeout calling db after 3000ms on table users
+2026-03-08T12:06:59Z INFO api kafka event published to partition 0
+2026-03-08T12:35:55Z ERROR payments cache node unresponsive after 1 retries
+2026-03-08T12:55:55Z WARN db connection pool utilization at 88% capacity
+2026-03-08T13:16:49Z ERROR notifications payment failed card expired or insufficient funds for order 6795
+2026-03-08T13:41:53Z INFO api background sync worker completed synchronization
+2026-03-08T14:07:57Z INFO payments health check ping response 200 ok
+2026-03-08T14:32:44Z INFO auth processed payment batch size 60
+2026-03-08T14:50:54Z INFO db search query executed in 4450ms with 78 results
+2026-03-08T15:11:15Z INFO orders token verified for client application client_21
+2026-03-08T15:25:37Z ERROR auth fatal unhandled exception in worker thread out of memory
+2026-03-08T15:50:40Z ERROR api deadlock detected on table audit_log transaction aborted
+2026-03-08T16:06:50Z ERROR db timeout calling db after 3000ms on table users
+2026-03-08T16:20:16Z ERROR orders timeout calling db after 3000ms on table orders
+2026-03-08T16:41:41Z ERROR api payment failed card expired or insufficient funds for order 3621
+2026-03-08T17:06:03Z INFO payments kafka event published to partition 3
+2026-03-08T17:28:53Z INFO orders cache refreshed for key user_profile
+2026-03-08T17:53:32Z ERROR orders authentication signature mismatch for bearer token
+2026-03-08T18:05:30Z INFO db health check ping response 200 ok
+2026-03-08T18:16:59Z INFO inventory order created with id 9630 total amount 80usd
+2026-03-08T18:32:04Z INFO payments user logged in successfully session 930116
+2026-03-08T18:51:48Z WARN orders slow database query took 3552ms on table users
+2026-03-08T19:04:51Z INFO inventory order created with id 3778 total amount 66usd
+2026-03-08T19:18:31Z WARN inventory retrying request attempt 1 of 3 after transient network failure
+2026-03-08T19:35:04Z ERROR notifications connection refused on port 9092 during upstream dispatch
+2026-03-08T19:54:51Z ERROR search payment failed card expired or insufficient funds for order 5028
+2026-03-08T20:15:33Z ERROR api connection refused on port 8080 during upstream dispatch
+2026-03-08T20:34:54Z WARN inventory circuit breaker half-open state for service billing
+2026-03-08T20:58:21Z ERROR db timeout calling db after 3000ms on table orders
+2026-03-08T21:23:31Z INFO inventory token verified for client application client_4
+2026-03-08T21:44:46Z ERROR orders authentication signature mismatch for bearer token
+2026-03-08T22:11:25Z ERROR auth upstream service gateway timeout 504 from inventory
+2026-03-08T22:28:49Z INFO api processed payment batch size 64
+2026-03-08T22:44:19Z WARN notifications high memory usage threshold 85% reached in pod pod-4
+2026-03-08T23:14:02Z INFO inventory kafka event published to partition 0
+2026-03-08T23:25:42Z ERROR api authentication signature mismatch for bearer token
+2026-03-08T23:36:35Z ERROR api authentication signature mismatch for bearer token
+2026-03-08T23:48:34Z ERROR db connection refused on port 5432 during upstream dispatch
+2026-03-09T00:18:14Z INFO orders search query executed in 2719ms with 95 results
+2026-03-09T00:40:50Z INFO api kafka event published to partition 6
+2026-03-09T00:57:57Z INFO notifications order created with id 3953 total amount 384usd
+2026-03-09T01:12:19Z INFO notifications user logged in successfully session 671559
+2026-03-09T01:42:07Z INFO payments search query executed in 717ms with 70 results
+2026-03-09T02:02:47Z INFO payments order created with id 6603 total amount 395usd
+2026-03-09T02:31:15Z WARN api slow database query took 3907ms on table users
+2026-99-99T99:99:99Z ERROR db invalid calendar date
+2026-03-09T03:20:56Z INFO auth user logged in successfully session 329242
+2026-03-09T03:37:06Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-09T03:50:45Z INFO inventory processed payment batch size 189
+2026-03-09T04:10:50Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-09T04:27:59Z INFO inventory user logged in successfully session 492842
+2026-03-09T04:38:35Z WARN search rate limit approaching 90% quota for client client_40
+2026-03-09T05:06:54Z INFO auth cache refreshed for key rate_limit
+2026-03-09T05:29:39Z INFO auth database connection pool acquired lease
+2026-03-09T05:54:23Z INFO orders user logged in successfully session 388321
+2026-03-09T06:09:44Z INFO search health check ping response 200 ok
+2026-03-09T06:36:07Z INFO db database connection pool acquired lease
+2026-03-09T06:57:00Z INFO api token verified for client application client_15
+2026-03-09T07:21:21Z INFO notifications search query executed in 1771ms with 71 results
+2026-03-09T07:40:11Z INFO orders token verified for client application client_13
+2026-03-09T08:02:05Z WARN search connection pool utilization at 88% capacity
+2026-03-09T08:14:38Z INFO search health check ping response 200 ok
+2026-03-09T08:39:09Z WARN auth connection pool utilization at 88% capacity
+2026-03-09T08:58:22Z INFO api database connection pool acquired lease
+2026-03-09T09:09:51Z WARN orders deprecated api version v1 called by client client_50
+2026-03-09T09:37:02Z INFO search database connection pool acquired lease
+2026-03-09T10:03:34Z INFO payments processed payment batch size 87
+2026-03-09T10:16:04Z INFO inventory background sync worker completed synchronization
+2026-03-09T10:40:29Z WARN api circuit breaker half-open state for service inventory
+2026-03-09T10:54:46Z INFO search processed payment batch size 139
+2026-03-09T11:20:35Z INFO db processed payment batch size 37
+2026-03-09T11:44:00Z INFO auth token verified for client application client_28
+2026-03-09T12:07:09Z INFO orders health check ping response 200 ok
+2026-03-09T12:21:40Z INFO orders health check ping response 200 ok
+2026-03-09T12:41:43Z INFO orders database connection pool acquired lease
+2026-03-09T12:55:35Z INFO payments background sync worker completed synchronization
+2026-03-09T13:07:52Z INFO orders health check ping response 200 ok
+2026-03-09T13:23:03Z WARN orders rate limit approaching 90% quota for client client_34
+2026-03-09T13:38:04Z ERROR search authentication signature mismatch for bearer token
+2026-03-09T14:06:03Z INFO orders processed payment batch size 166
+2026-03-09T14:25:32Z ERROR db deadlock detected on table users transaction aborted
+2026-03-09T14:35:43Z WARN payments deprecated api version v1 called by client client_43
+2026-03-09T14:51:39Z WARN api connection pool utilization at 88% capacity
+2026-03-09T15:04:28Z INFO auth processed payment batch size 106
+2026-03-09T15:23:59Z INFO inventory background sync worker completed synchronization
+2026-03-09T15:35:09Z INFO payments background sync worker completed synchronization
+2026-03-09T15:59:09Z INFO payments health check ping response 200 ok
+2026-03-09T16:11:33Z ERROR payments
+2026-03-09T16:39:22Z INFO auth background sync worker completed synchronization
+2026-03-09T17:06:46Z INFO payments cache refreshed for key session_cache
+2026-03-09T17:24:44Z INFO inventory search query executed in 3340ms with 2 results
+2026-03-09T17:44:15Z INFO db token verified for client application client_34
+2026-03-09T18:03:35Z INFO orders search query executed in 1627ms with 147 results
+2026-03-09T18:25:32Z INFO inventory order created with id 1483 total amount 446usd
+2026-03-09T18:53:46Z WARN inventory slow database query took 3216ms on table users
+2026-03-09T19:06:32Z INFO api processed payment batch size 67
+2026-03-09T19:20:43Z WARN search connection pool utilization at 88% capacity
+2026-03-09T19:43:16Z INFO auth background sync worker completed synchronization
+2026-03-09T20:05:28Z INFO orders processed payment batch size 83
+2026-03-09T20:27:18Z ERROR payments timeout calling db after 3000ms on table transactions
+2026-03-09T20:47:19Z INFO payments token verified for client application client_31
+2026-03-09T21:10:31Z INFO api user logged in successfully session 158045
+2026-03-09T21:29:15Z INFO notifications order created with id 7024 total amount 190usd
+2026-03-09T21:59:19Z INFO payments order created with id 3076 total amount 234usd
+2026-03-09T22:22:39Z INFO api background sync worker completed synchronization
+2026-03-09T22:46:48Z INFO inventory database connection pool acquired lease
+2026-03-09T22:57:36Z INFO notifications order created with id 9174 total amount 438usd
+2026-03-09T23:08:04Z INFO api health check ping response 200 ok
+2026-03-09T23:34:29Z INFO search database connection pool acquired lease
+2026-03-09T23:47:50Z INFO api cache refreshed for key catalog_item
+2026-03-10T00:13:41Z INFO auth processed payment batch size 55
+2026-03-10T00:36:37Z INFO auth processed payment batch size 122
+2026-03-10T00:49:40Z INFO auth user logged in successfully session 293205
+2026-03-10T01:10:38Z INFO auth order created with id 8271 total amount 67usd
+2026-03-10T01:23:36Z INFO search search query executed in 1463ms with 94 results
+2026-03-10T01:45:58Z INFO search health check ping response 200 ok
+2026-03-10T02:13:08Z INFO notifications kafka event published to partition 5
+2026-03-10T02:38:18Z INFO inventory token verified for client application client_42
+2026-03-10T03:04:02Z INFO db database connection pool acquired lease
+2026-03-10T03:31:47Z INFO orders kafka event published to partition 2
+2026-03-10T04:00:05Z INFO api processed payment batch size 161
+2026-03-10T04:25:06Z INFO db cache refreshed for key session_cache
+2026-03-10T04:54:13Z INFO search user logged in successfully session 691534
+2026-03-10T05:12:59Z WARN search slow database query took 4136ms on table transactions
+2026-03-10T05:41:42Z INFO api kafka event published to partition 8
+2026-03-10T05:55:53Z INFO notifications kafka event published to partition 6
+2026-03-10T06:20:42Z INFO auth health check ping response 200 ok
+2026-03-10T06:49:35Z INFO payments user logged in successfully session 357859
+2026-03-10T07:05:22Z WARN api high memory usage threshold 85% reached in pod pod-10
+2026-03-10T07:28:18Z INFO db processed payment batch size 181
+2026-03-10T07:40:39Z INFO orders search query executed in 3957ms with 81 results
+2026-03-10T08:07:40Z INFO api user logged in successfully session 405062
+2026-03-10T08:23:00Z INFO api token verified for client application client_15
+2026-03-10T08:52:14Z INFO search token verified for client application client_14
+2026-03-10T09:18:28Z INFO api kafka event published to partition 8
+2026-03-10T09:34:37Z INFO api user logged in successfully session 385693
+2026-03-10T09:45:07Z INFO db order created with id 7408 total amount 109usd
+2026-03-10T10:14:44Z INFO inventory order created with id 7657 total amount 297usd
+2026-03-10T10:40:11Z INFO payments search query executed in 1042ms with 79 results
+2026-03-10T10:54:27Z INFO auth cache refreshed for key session_cache
+2026-03-10T11:18:25Z WARN orders circuit breaker half-open state for service notifications
+2026-03-10T11:36:05Z INFO auth cache refreshed for key user_profile
+2026-03-10T11:54:13Z INFO orders processed payment batch size 154
+2026-03-10T12:14:46Z INFO search cache refreshed for key rate_limit
+2026-03-10T12:28:51Z INFO auth user logged in successfully session 755331
+2026-03-10T12:46:21Z WARN api slow database query took 2303ms on table audit_log
+2026-03-10T13:15:55Z INFO notifications health check ping response 200 ok
+2026-03-10T13:28:45Z INFO notifications token verified for client application client_36
+2026-03-10T13:49:32Z WARN db deprecated api version v1 called by client client_29
+2026-03-10T14:00:07Z INFO search search query executed in 237ms with 50 results
+2026-03-10T14:16:49Z WARN payments deprecated api version v1 called by client client_3
+2026-03-10T14:36:47Z WARN auth high memory usage threshold 85% reached in pod pod-7
+2026-03-10T14:53:12Z INFO api database connection pool acquired lease
+2026-03-10T15:04:35Z INFO orders order created with id 8264 total amount 32usd
+2026-03-10T15:17:03Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-10T15:39:59Z WARN api deprecated api version v1 called by client client_4
+2026-03-10T15:54:37Z WARN db deprecated api version v1 called by client client_23
+2026-03-10T16:07:50Z ERROR inventory cache node unresponsive after 1 retries
+2026-03-10T16:18:33Z INFO db background sync worker completed synchronization
+2026-03-10T16:31:50Z INFO auth cache refreshed for key rate_limit
+2026-03-10T16:58:44Z INFO search background sync worker completed synchronization
+2026-03-10T17:12:07Z INFO api database connection pool acquired lease
+2026-03-10T17:35:28Z INFO orders order created with id 4869 total amount 449usd
+2026-03-10T17:47:34Z INFO api background sync worker completed synchronization
+2026-03-10T18:14:10Z INFO inventory kafka event published to partition 5
+2026-03-10T18:42:42Z INFO api user logged in successfully session 321493
+2026-03-10T18:53:28Z INFO db search query executed in 2986ms with 25 results
+2026-03-10T19:17:23Z INFO inventory search query executed in 1099ms with 115 results
+2026-03-10T19:29:43Z INFO inventory order created with id 1113 total amount 182usd
+2026-03-10T19:49:05Z INFO search processed payment batch size 16
+2026-03-10T20:05:10Z INFO payments kafka event published to partition 2
+2026-03-10T20:29:08Z WARN notifications high memory usage threshold 85% reached in pod pod-2
+2026-03-10T20:47:44Z ERROR orders connection refused on port 9092 during upstream dispatch
+2026-03-10T21:02:09Z INFO db processed payment batch size 56
+2026-03-10T21:17:46Z INFO search order created with id 4683 total amount 19usd
+2026-03-10T21:46:36Z INFO search background sync worker completed synchronization
+2026-03-10T22:09:24Z INFO api kafka event published to partition 2
+2026-03-10T22:27:51Z INFO orders kafka event published to partition 1
+2026-03-10T22:41:32Z INFO inventory kafka event published to partition 5
+2026-03-10T22:56:09Z INFO orders background sync worker completed synchronization
+2026-03-10T23:25:53Z INFO api cache refreshed for key rate_limit
+2026-03-10T23:47:05Z WARN db cache miss rate exceeded 20% in the last 5 minutes
+2026-03-11T00:06:25Z INFO api cache refreshed for key user_profile
+2026-03-11T00:33:59Z WARN auth connection pool utilization at 88% capacity
+2026-03-11T00:52:42Z INFO orders database connection pool acquired lease
+2026-03-11T01:15:44Z WARN notifications circuit breaker half-open state for service inventory
+2026-03-11T01:28:48Z INFO search database connection pool acquired lease
+2026-03-11T01:41:50Z INFO api user logged in successfully session 992253
+2026-03-11T02:11:31Z INFO search kafka event published to partition 2
+2026-03-11T02:28:30Z INFO orders database connection pool acquired lease
+2026-03-11T02:51:58Z INFO search kafka event published to partition 3
+2026-03-11T03:06:39Z INFO orders kafka event published to partition 4
+2026-03-11T03:26:05Z INFO search order created with id 8836 total amount 69usd
+2026-03-11T03:47:39Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-11T04:16:54Z WARN api rate limit approaching 90% quota for client client_49
+2026-03-11T04:28:18Z INFO notifications token verified for client application client_50
+2026-03-11T04:40:28Z INFO db token verified for client application client_11
+2026-03-11T05:09:21Z WARN orders rate limit approaching 90% quota for client client_21
+2026-03-11T05:20:33Z INFO db background sync worker completed synchronization
+2026-03-11T05:41:52Z INFO notifications processed payment batch size 93
+2026-03-11T05:53:09Z INFO search background sync worker completed synchronization
+2026-03-11T06:12:04Z INFO orders kafka event published to partition 5
+2026-03-11T06:26:44Z INFO orders processed payment batch size 174
+2026-03-11T06:48:13Z ERROR search upstream service gateway timeout 504 from inventory
+2026-03-11T07:10:36Z INFO inventory processed payment batch size 176
+2026-03-11T07:20:48Z INFO api token verified for client application client_44
+2026-03-11T07:34:42Z INFO auth user logged in successfully session 659333
+2026-03-11T07:53:20Z WARN api rate limit approaching 90% quota for client client_25
+2026-03-11T08:07:25Z INFO auth order created with id 9301 total amount 477usd
+2026-03-11T08:21:20Z INFO search background sync worker completed synchronization
+2026-03-11T08:40:10Z INFO auth search query executed in 2798ms with 11 results
+2026-03-11T09:00:43Z INFO payments user logged in successfully session 725165
+2026-03-11T09:18:09Z INFO payments background sync worker completed synchronization
+2026-03-11T09:46:39Z INFO db cache refreshed for key session_cache
+2026-03-11T10:14:00Z INFO notifications background sync worker completed synchronization
+2026-03-11T10:40:19Z INFO auth search query executed in 2616ms with 84 results
+2026-03-11T10:57:57Z INFO payments search query executed in 1321ms with 8 results
+2026-03-11T11:17:47Z INFO inventory background sync worker completed synchronization
+2026-03-11T11:44:08Z INFO auth token verified for client application client_28
+2026-03-11T12:05:19Z WARN orders cache miss rate exceeded 20% in the last 5 minutes
+2026-03-11T12:25:59Z INFO payments kafka event published to partition 3
+2026-03-11T12:55:24Z INFO inventory background sync worker completed synchronization
+2026-03-11T13:08:23Z INFO api search query executed in 1734ms with 63 results
+2026-03-11T13:20:57Z WARN db circuit breaker half-open state for service billing
+2026-03-11T13:35:43Z WARN notifications retrying request attempt 3 of 3 after transient network failure
+2026-03-11T14:01:05Z INFO search health check ping response 200 ok
+2026-03-11T14:30:59Z INFO notifications health check ping response 200 ok
+2026-03-11T14:41:55Z WARN auth slow database query took 476ms on table users
+2026-03-11T15:05:29Z INFO payments token verified for client application client_47
+2026-03-11T15:31:22Z INFO orders cache refreshed for key catalog_item
+2026-03-11T15:47:49Z WARN auth connection pool utilization at 88% capacity
+2026-03-11T16:04:25Z INFO orders kafka event published to partition 4
+2026-03-11T16:17:10Z WARN orders slow database query took 1419ms on table orders
+2026-03-11T16:44:54Z WARN db high memory usage threshold 85% reached in pod pod-9
+2026-03-11T17:10:02Z ERROR orders fatal unhandled exception in worker thread out of memory
+2026-03-11T17:22:03Z ERROR notifications cache node unresponsive after 2 retries
+2026-03-11T17:42:10Z ERROR db timeout calling db after 3000ms on table transactions
+2026-03-11T18:06:38Z INFO db search query executed in 4311ms with 104 results
+2026-03-11T18:31:04Z INFO auth database connection pool acquired lease
+2026-03-11T18:42:56Z INFO inventory search query executed in 2699ms with 90 results
+2026-03-11T18:58:16Z INFO auth token verified for client application client_39
+2026-03-11T19:08:27Z INFO search order created with id 4088 total amount 335usd
+2026-03-11T19:32:46Z INFO db background sync worker completed synchronization
+2026-03-11T19:55:01Z WARN notifications connection pool utilization at 88% capacity
+2026-03-11T20:21:06Z INFO notifications database connection pool acquired lease
+2026-03-11T20:46:34Z INFO inventory search query executed in 2783ms with 143 results
+2026-03-11T21:12:11Z INFO payments health check ping response 200 ok
+2026-03-11T21:41:43Z WARN inventory retrying request attempt 3 of 3 after transient network failure
+2026-03-11T21:55:57Z INFO inventory health check ping response 200 ok
+2026-03-11T22:08:54Z INFO inventory database connection pool acquired lease
+2026-03-11T22:31:04Z INFO notifications cache refreshed for key user_profile
+2026-03-11T23:00:25Z INFO orders kafka event published to partition 3
+2026-03-11T23:19:57Z INFO inventory cache refreshed for key rate_limit
+2026-03-11T23:45:31Z INFO payments cache refreshed for key session_cache
+2026-03-12T00:00:08Z INFO notifications user logged in successfully session 561929
+2026-03-12T00:18:29Z ERROR db cache node unresponsive after 2 retries
+2026-03-12T00:45:50Z INFO auth user logged in successfully session 780381
+2026-03-12T01:05:35Z WARN search circuit breaker half-open state for service inventory
+2026-03-12T01:23:56Z ERROR inventory payment failed card expired or insufficient funds for order 6782
+2026-03-12T01:47:26Z WARN api circuit breaker half-open state for service notifications
+2026-03-12T02:05:26Z WARN notifications deprecated api version v1 called by client client_22
+2026-03-12T02:23:17Z INFO db search query executed in 2162ms with 33 results
+2026-03-12T02:35:06Z ERROR payments cache node unresponsive after 3 retries
+2026-03-12T02:54:45Z INFO auth kafka event published to partition 8
+2026-03-12T03:24:31Z INFO notifications order created with id 1645 total amount 79usd
+2026-03-12T03:43:37Z WARN search rate limit approaching 90% quota for client client_40
+2026-03-12T04:08:02Z INFO notifications user logged in successfully session 752069
+2026-03-12T04:31:12Z INFO inventory token verified for client application client_6
+2026-03-12T04:47:23Z WARN inventory high memory usage threshold 85% reached in pod pod-6
+2026-03-12T05:08:36Z INFO notifications order created with id 6220 total amount 451usd
+2026-03-12T05:34:23Z INFO payments token verified for client application client_22
+2026-03-12T05:46:19Z INFO api health check ping response 200 ok
+2026-03-12T06:05:19Z INFO api processed payment batch size 189
+2026-03-12T06:27:31Z INFO inventory processed payment batch size 145
+2026-03-12T06:55:48Z ERROR inventory connection refused on port 9092 during upstream dispatch
+2026-03-12T07:13:21Z WARN api circuit breaker half-open state for service inventory
+2026-03-12T07:38:18Z ERROR db cache node unresponsive after 1 retries
+2026-03-12T07:51:24Z INFO inventory cache refreshed for key session_cache
+2026-03-12T08:20:52Z INFO notifications database connection pool acquired lease
+2026-03-12T08:43:17Z WARN search rate limit approaching 90% quota for client client_2
+2026-03-12T09:11:43Z ERROR notifications deadlock detected on table orders transaction aborted
+2026-03-12T09:39:45Z ERROR inventory payment failed card expired or insufficient funds for order 6269
+2026-03-12T09:57:09Z WARN api high memory usage threshold 85% reached in pod pod-6
+2026-03-12T10:13:12Z ERROR orders authentication signature mismatch for bearer token
+2026-03-12T10:24:52Z ERROR db upstream service gateway timeout 504 from billing
+2026-03-12T10:40:41Z INFO payments order created with id 6349 total amount 292usd
+2026-03-12T10:54:21Z ERROR orders cache node unresponsive after 1 retries
+2026-03-12T11:23:23Z ERROR search cache node unresponsive after 3 retries
+2026-03-12T11:42:30Z ERROR orders authentication signature mismatch for bearer token
+2026-03-12T12:02:41Z ERROR inventory timeout calling db after 3000ms on table orders
+2026-03-12T12:17:23Z INFO auth database connection pool acquired lease
+2026-03-12T12:37:46Z INFO orders token verified for client application client_8
+2026-03-12T12:48:41Z ERROR api authentication signature mismatch for bearer token
+2026-03-12T13:05:01Z INFO search health check ping response 200 ok
+2026-03-12T13:27:31Z ERROR payments timeout calling db after 3000ms on table orders
+2026-03-12T13:52:33Z INFO payments processed payment batch size 87
+2026-03-12T14:04:54Z WARN orders deprecated api version v1 called by client client_5
+2026-03-12T14:18:31Z ERROR auth deadlock detected on table audit_log transaction aborted
+2026-03-12T14:46:12Z INFO notifications health check ping response 200 ok
+2026-03-12T15:10:55Z INFO search search query executed in 2545ms with 37 results
+2026-03-12T15:33:08Z INFO search background sync worker completed synchronization
+2026-03-12T15:59:51Z ERROR auth timeout calling db after 3000ms on table users
+2026-03-12T16:20:59Z ERROR inventory authentication signature mismatch for bearer token
+2026-03-12T16:41:03Z ERROR orders authentication signature mismatch for bearer token
+2026-03-12T16:54:52Z INFO orders background sync worker completed synchronization
+2026-03-12T17:17:26Z ERROR payments upstream service gateway timeout 504 from billing
+2026-03-12T17:46:39Z ERROR inventory timeout calling db after 3000ms on table audit_log
+2026-03-12T18:08:54Z INFO notifications health check ping response 200 ok
+2026-03-12T18:35:08Z ERROR orders connection refused on port 6379 during upstream dispatch
+2026-03-12T19:04:44Z WARN api high memory usage threshold 85% reached in pod pod-10
+2026-03-12T19:31:07Z INFO db cache refreshed for key rate_limit
+2026-03-12T19:46:49Z INFO auth order created with id 6859 total amount 253usd
+2026-03-12T20:05:54Z INFO orders background sync worker completed synchronization
+2026-03-12T20:16:12Z ERROR auth deadlock detected on table audit_log transaction aborted
+2026-03-12T20:28:17Z ERROR auth payment failed card expired or insufficient funds for order 3080
+2026-03-12T20:55:03Z ERROR payments cache node unresponsive after 3 retries
+2026-03-12T21:17:31Z ERROR db authentication signature mismatch for bearer token
+2026-03-12T21:35:03Z WARN search deprecated api version v1 called by client client_31
+2026-03-12T21:59:04Z WARN auth deprecated api version v1 called by client client_39
+2026-03-12T22:28:45Z INFO inventory processed payment batch size 166
+2026-03-12T22:41:12Z INFO api health check ping response 200 ok
+2026-03-12T22:56:25Z INFO inventory kafka event published to partition 4
+2026-03-12T23:26:17Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-12T23:38:56Z ERROR inventory authentication signature mismatch for bearer token
+2026-03-13T00:07:43Z INFO payments kafka event published to partition 0
+2026-03-13T00:34:07Z INFO inventory health check ping response 200 ok
+2026-03-13T00:53:11Z WARN inventory cache miss rate exceeded 20% in the last 5 minutes
+2026-03-13T01:19:11Z INFO notifications kafka event published to partition 1
+2026-03-13T01:33:40Z INFO orders health check ping response 200 ok
+2026-03-13T01:53:38Z WARN auth connection pool utilization at 88% capacity
+2026-03-13T02:04:41Z INFO db order created with id 1820 total amount 138usd
+2026-03-13T02:23:01Z INFO auth database connection pool acquired lease
+2026-03-13T02:49:35Z INFO notifications kafka event published to partition 0
+2026-03-13T03:09:45Z INFO db user logged in successfully session 591852
+2026-03-13T03:34:13Z INFO payments order created with id 3226 total amount 10usd
+2026-03-13T04:00:09Z WARN inventory deprecated api version v1 called by client client_3
+2026-03-13T04:17:49Z INFO api user logged in successfully session 326041
+2026-03-13T04:32:59Z INFO search health check ping response 200 ok
+2026-03-13T04:44:39Z WARN notifications high memory usage threshold 85% reached in pod pod-1
+2026-03-13T04:55:56Z INFO search user logged in successfully session 570138
+2026-03-13T05:21:25Z INFO auth cache refreshed for key rate_limit
+2026-03-13T05:39:26Z INFO db health check ping response 200 ok
+2026-03-13T06:05:23Z WARN db cache miss rate exceeded 20% in the last 5 minutes
+2026-03-13T06:26:05Z WARN orders circuit breaker half-open state for service notifications
+2026-03-13T06:38:19Z INFO api health check ping response 200 ok
+2026-03-13T06:50:02Z INFO auth token verified for client application client_27
+2026-03-13T07:17:50Z ERROR api fatal unhandled exception in worker thread out of memory
+2026-03-13T07:29:34Z INFO inventory background sync worker completed synchronization
+2026-03-13T07:40:28Z INFO payments database connection pool acquired lease
+2026-03-13T08:07:19Z INFO orders cache refreshed for key rate_limit
+2026-03-13T08:24:38Z INFO inventory search query executed in 1874ms with 61 results
+2026-03-13T08:46:33Z INFO notifications cache refreshed for key catalog_item
+2026-03-13T09:15:32Z INFO payments token verified for client application client_4
+2026-03-13T09:41:25Z INFO search search query executed in 2202ms with 106 results
+2026-03-13T09:56:20Z ERROR api payment failed card expired or insufficient funds for order 1629
+2026-03-13T10:10:40Z INFO orders kafka event published to partition 8
+2026-03-13T10:21:06Z ERROR auth upstream service gateway timeout 504 from billing
+2026-03-13T10:47:39Z INFO inventory processed payment batch size 66
+2026-03-13T10:58:04Z INFO orders database connection pool acquired lease
+2026-03-13T11:08:26Z INFO api background sync worker completed synchronization
+2026-03-13T11:25:48Z INFO auth order created with id 2989 total amount 446usd
+2026-03-13T11:46:10Z INFO auth token verified for client application client_13
+2026-03-13T12:06:47Z INFO search user logged in successfully session 456705
+2026-03-13T12:36:32Z WARN notifications cache miss rate exceeded 20% in the last 5 minutes
+2026-03-13T12:59:42Z WARN search cache miss rate exceeded 20% in the last 5 minutes
+2026-03-13T13:25:37Z INFO inventory processed payment batch size 180
+2026-03-13T13:37:13Z INFO payments user logged in successfully session 399006
+2026-03-13T13:50:59Z WARN api high memory usage threshold 85% reached in pod pod-2
+2026-03-13T14:02:56Z INFO db order created with id 1065 total amount 64usd
+2026-03-13T14:14:40Z INFO auth user logged in successfully session 593161
+2026-03-13T14:34:41Z INFO inventory health check ping response 200 ok
+2026-03-13T14:49:54Z INFO auth search query executed in 1660ms with 148 results
+2026-03-13T15:20:06Z INFO inventory cache refreshed for key user_profile
+2026-03-13T15:33:09Z INFO search token verified for client application client_43
+2026-03-13T15:53:06Z INFO orders user logged in successfully session 554341
+2026-03-13T16:08:54Z INFO notifications kafka event published to partition 4
+2026-03-13T16:23:25Z INFO api background sync worker completed synchronization
+2026-03-13T16:48:33Z INFO auth health check ping response 200 ok
+2026-03-13T17:14:07Z INFO search user logged in successfully session 604385
+2026-03-13T17:26:08Z INFO api token verified for client application client_35
+2026-03-13T17:47:37Z INFO payments health check ping response 200 ok
+2026-03-13T18:02:52Z INFO orders database connection pool acquired lease
+2026-03-13T18:23:51Z INFO payments background sync worker completed synchronization
+2026-03-13T18:52:46Z INFO db user logged in successfully session 874793
+2026-03-13T19:19:32Z INFO payments background sync worker completed synchronization
+2026-03-13T19:39:10Z INFO db search query executed in 1409ms with 106 results
+2026-03-13T20:03:38Z WARN search cache miss rate exceeded 20% in the last 5 minutes
+2026-03-13T20:17:40Z INFO notifications order created with id 2889 total amount 417usd
+2026-03-13T20:38:37Z INFO payments kafka event published to partition 8
+2026-03-13T20:59:46Z INFO notifications health check ping response 200 ok
+2026-03-13T21:13:10Z WARN payments high memory usage threshold 85% reached in pod pod-6
+2026-03-13T21:24:54Z ERROR auth upstream service gateway timeout 504 from inventory
+2026-03-13T21:50:09Z INFO db database connection pool acquired lease
+2026-03-13T22:01:03Z INFO payments user logged in successfully session 794196
+2026-03-13T22:18:45Z INFO orders kafka event published to partition 6
+2026-03-13T22:37:02Z INFO notifications database connection pool acquired lease
+2026-03-13T23:05:03Z INFO orders processed payment batch size 137
+2026-03-13T23:18:15Z INFO orders cache refreshed for key catalog_item
+2026-03-13T23:47:42Z INFO payments search query executed in 2530ms with 10 results
+2026-03-14T00:04:38Z INFO payments order created with id 7181 total amount 167usd
+2026-03-14T00:22:09Z INFO db processed payment batch size 182
+2026-03-14T00:36:26Z INFO orders database connection pool acquired lease
+2026-03-14T00:58:44Z INFO api background sync worker completed synchronization
+2026-03-14T01:18:08Z INFO payments user logged in successfully session 293807
+2026-03-14T01:33:08Z INFO notifications processed payment batch size 195
+2026-03-14T01:49:29Z INFO orders order created with id 5788 total amount 125usd
+2026-03-14T02:16:00Z INFO db order created with id 8393 total amount 150usd
+2026-03-14T02:45:03Z INFO payments token verified for client application client_28
+2026-03-14T03:14:09Z INFO api token verified for client application client_25
+2026-03-14T03:29:21Z INFO inventory kafka event published to partition 8
+2026-03-14T03:54:33Z INFO payments kafka event published to partition 6
+2026-03-14T04:17:01Z INFO search background sync worker completed synchronization
+2026-03-14T04:47:05Z INFO inventory database connection pool acquired lease
+2026-03-14T05:10:00Z INFO auth processed payment batch size 155
+2026-03-14T05:35:44Z INFO payments search query executed in 1114ms with 117 results
+2026-03-14T05:52:03Z INFO api token verified for client application client_9
+2026-03-14T06:20:20Z INFO payments kafka event published to partition 4
+2026-03-14T06:38:37Z WARN payments cache miss rate exceeded 20% in the last 5 minutes
+2026-03-14T06:59:36Z INFO orders kafka event published to partition 0
+2026-03-14T07:10:57Z WARN inventory circuit breaker half-open state for service billing
+2026-03-14T07:22:39Z INFO search user logged in successfully session 575148
+2026-03-14T07:37:10Z INFO notifications background sync worker completed synchronization
+2026-03-14T07:47:38Z INFO notifications background sync worker completed synchronization
+2026-03-14T08:06:52Z INFO search token verified for client application client_7
+2026-03-14T08:18:32Z INFO api search query executed in 4211ms with 139 results
+2026-03-14T08:30:07Z INFO orders database connection pool acquired lease
+2026-03-14T09:00:15Z INFO orders order created with id 8707 total amount 283usd
+2026-03-14T09:28:02Z INFO db order created with id 4168 total amount 143usd
+2026-03-14T09:55:47Z INFO search search query executed in 4187ms with 150 results
+2026-03-14T10:15:31Z WARN notifications circuit breaker half-open state for service inventory
+2026-03-14T10:30:06Z INFO auth search query executed in 1009ms with 67 results
+2026-03-14T10:41:39Z INFO inventory background sync worker completed synchronization
+2026-03-14T11:10:55Z INFO inventory database connection pool acquired lease
+2026-03-14T11:27:59Z INFO payments background sync worker completed synchronization
+2026-03-14T11:38:36Z INFO auth database connection pool acquired lease
+2026-03-14T11:55:08Z INFO payments kafka event published to partition 0
+2026-03-14T12:12:53Z INFO payments user logged in successfully session 805703
+2026-03-14T12:34:56Z INFO orders cache refreshed for key session_cache
+2026-03-14T12:50:16Z WARN db rate limit approaching 90% quota for client client_11
+2026-03-14T13:02:25Z WARN auth connection pool utilization at 88% capacity
+2026-03-14T13:29:07Z INFO auth kafka event published to partition 0
+2026-03-14T13:55:12Z INFO inventory processed payment batch size 37
+2026-03-14T14:21:45Z WARN auth circuit breaker half-open state for service notifications
+2026-03-14T14:41:03Z WARN auth cache miss rate exceeded 20% in the last 5 minutes
+2026-03-14T15:09:59Z WARN inventory connection pool utilization at 88% capacity
+2026-03-14T15:30:20Z WARN orders rate limit approaching 90% quota for client client_40
+2026-03-14T15:56:48Z INFO db user logged in successfully session 141316
+2026-03-14T16:23:00Z INFO payments token verified for client application client_41
+2026-03-14T16:40:51Z INFO db background sync worker completed synchronization
+2026-03-14T17:09:28Z WARN auth circuit breaker half-open state for service inventory
+2026-03-14T17:32:08Z INFO auth kafka event published to partition 0
+2026-03-14T17:55:37Z INFO search background sync worker completed synchronization
+2026-03-14T18:08:34Z WARN notifications connection pool utilization at 88% capacity
+2026-03-14T18:22:39Z INFO db user logged in successfully session 441649
+2026-03-14T18:45:38Z INFO api cache refreshed for key session_cache
+2026-03-14T19:10:20Z INFO notifications health check ping response 200 ok
+2026-03-14T19:24:03Z WARN notifications high memory usage threshold 85% reached in pod pod-9
+2026-03-14T19:44:01Z INFO api cache refreshed for key user_profile
+2026-03-14T20:09:26Z WARN notifications cache miss rate exceeded 20% in the last 5 minutes
+2026-03-14T20:19:52Z INFO inventory order created with id 6254 total amount 66usd
+2026-03-14T20:45:39Z INFO search user logged in successfully session 196967
+2026-03-14T21:15:44Z INFO notifications order created with id 2886 total amount 84usd
+2026-03-14T21:34:05Z INFO auth database connection pool acquired lease
+2026-03-14T21:53:10Z INFO notifications health check ping response 200 ok
+2026-03-14T22:16:21Z INFO auth cache refreshed for key user_profile
+2026-03-14T22:46:14Z INFO db user logged in successfully session 980794
+2026-03-14T23:12:55Z INFO notifications order created with id 5513 total amount 107usd
+2026-03-14T23:28:13Z INFO db user logged in successfully session 247687
+2026-03-14T23:50:23Z INFO auth search query executed in 2455ms with 135 results
+2026-03-15T00:00:00Z INFO api user logged in successfully session 230751

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# LogLens Data & Indices (keep small sample data, ignore generated benchmark logs and saved indices)
+data/benchmark_*.log
+data/large_*.log
+*.idx
+*.index
+*.dat
+output/*.png
+output/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
