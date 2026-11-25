@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogLens — High-Performance Log Aggregation & Search</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom Application Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-light">
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-primary" href="#">
+        <i class="bi bi-search-heart text-info fs-4"></i>
+        <span>Log<span class="text-light">Lens</span></span>
+        <span class="badge bg-secondary-subtle text-secondary-emphasis fs-8 ms-1">v1.0</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <button class="btn btn-outline-light nav-tab-btn active" id="tabSearch" data-view="searchView">
+              <i class="bi bi-terminal me-1"></i> Search Explorer
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light nav-tab-btn" id="tabAnalytics" data-view="analyticsView">
+              <i class="bi bi-graph-up-arrow me-1"></i> Error Analytics
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light nav-tab-btn" id="tabStats" data-view="statsView">
+              <i class="bi bi-pie-chart me-1"></i> Index Diagnostics
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Live Announcer for Screen Readers -->
+  <div id="liveAnnouncer" class="visually-hidden" aria-live="polite"></div>
+
+  <!-- Global Application Container -->
+  <main class="container-fluid py-3 px-md-4">
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: SEARCH EXPLORER & RESULTS VIEW    -->
+    <!-- ========================================== -->
+    <section id="searchView" class="app-view">
+      
+      <!-- Search Filter Bar Card -->
+      <div class="card bg-secondary-dark border-secondary shadow-sm mb-3">
+        <div class="card-body p-3 p-md-4">
+          <form id="searchForm" novalidate>
+            <div class="row g-2 align-items-end">
+              
+              <!-- Query Input Box -->
+              <div class="col-12 col-lg-5">
+                <label for="queryInput" class="form-label fw-semibold text-light mb-1">
+                  Search Query Expression
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text bg-black text-secondary border-secondary">
+                    <i class="bi bi-search"></i>
+                  </span>
+                  <input 
+                    type="text" 
+                    id="queryInput" 
+                    class="form-control bg-black text-light border-secondary font-monospace" 
+                    placeholder="e.g. timeout database OR deadlock NOT retry" 
+                    aria-describedby="queryHelp"
+                  >
+                  <button class="btn btn-outline-secondary" type="button" id="clearQueryBtn" title="Clear search box">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div id="queryHelp" class="form-text text-secondary font-monospace fs-8 mt-1">
+                  Default AND. Operators: <span class="badge bg-secondary">OR</span>, <span class="badge bg-secondary">NOT</span>, <span class="badge bg-secondary">level:ERROR</span>, <span class="badge bg-secondary">service:payments</span>
+                </div>
+              </div>
+
+              <!-- Level Dropdown Filter -->
+              <div class="col-6 col-sm-3 col-lg-2">
+                <label for="levelSelect" class="form-label fw-semibold text-light mb-1">Log Level</label>
+                <select id="levelSelect" class="form-select bg-black text-light border-secondary">
+                  <option value="">All Levels</option>
+                  <option value="ERROR">ERROR</option>
+                  <option value="WARN">WARN</option>
+                  <option value="INFO">INFO</option>
+                </select>
+              </div>
+
+              <!-- Service Dropdown Filter -->
+              <div class="col-6 col-sm-3 col-lg-2">
+                <label for="serviceSelect" class="form-label fw-semibold text-light mb-1">Service</label>
+                <select id="serviceSelect" class="form-select bg-black text-light border-secondary">
+                  <option value="">All Services</option>
+                  <!-- Populated dynamically via /stats -->
+                </select>
+              </div>
+
+              <!-- From Time Range -->
+              <div class="col-6 col-sm-3 col-lg-1">
+                <label for="fromTimeInput" class="form-label fw-semibold text-light mb-1">From (UTC)</label>
+                <input type="text" id="fromTimeInput" class="form-control bg-black text-light border-secondary fs-8 font-monospace" placeholder="YYYY-MM-DD">
+              </div>
+
+              <!-- To Time Range -->
+              <div class="col-6 col-sm-3 col-lg-1">
+                <label for="toTimeInput" class="form-label fw-semibold text-light mb-1">To (UTC)</label>
+                <input type="text" id="toTimeInput" class="form-control bg-black text-light border-secondary fs-8 font-monospace" placeholder="YYYY-MM-DD">
+              </div>
+
+              <!-- Search Action Button -->
+              <div class="col-12 col-lg-1 d-grid">
+                <button type="submit" id="searchSubmitBtn" class="btn btn-primary fw-bold text-nowrap min-touch-target">
+                  <i class="bi bi-funnel-fill me-1"></i> Search
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Execution Status & Facet Summary Strip -->
+      <div id="statusStrip" class="d-flex flex-wrap align-items-center justify-content-between bg-black p-2 px-3 border border-secondary rounded mb-3 gap-2 d-none">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <div>
+            <span class="text-secondary">Matches:</span> 
+            <strong id="statMatches" class="text-light">0</strong>
+          </div>
+          <div class="text-secondary">|</div>
+          <div>
+            <span class="text-secondary">Latency:</span> 
+            <strong id="statLatency" class="text-info font-monospace">0.00 ms</strong>
+          </div>
+          <div class="text-secondary">|</div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-danger-subtle text-danger border border-danger">ERROR: <span id="countError">0</span></span>
+            <span class="badge bg-warning-subtle text-warning border border-warning">WARN: <span id="countWarn">0</span></span>
+            <span class="badge bg-success-subtle text-success border border-success">INFO: <span id="countInfo">0</span></span>
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div id="paginationContainer" class="d-flex align-items-center gap-2">
+          <span class="text-secondary fs-8" id="pageIndicator">Page 1 of 1</span>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Pagination">
+            <button type="button" class="btn btn-outline-secondary min-touch-target" id="prevPageBtn" disabled title="Previous page">
+              <i class="bi bi-chevron-left"></i> Prev
+            </button>
+            <button type="button" class="btn btn-outline-secondary min-touch-target" id="nextPageBtn" disabled title="Next page">
+              Next <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI STATE 1: LOADING SPINNER -->
+      <div id="stateLoading" class="text-center py-5 d-none">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Executing query...</span>
+        </div>
+        <p class="text-secondary mt-3 fs-6">Scanning index and evaluating intersections...</p>
+      </div>
+
+      <!-- UI STATE 2: INDEX NOT BUILT -->
+      <div id="stateIndexNotBuilt" class="alert alert-warning border-warning p-4 rounded shadow-sm d-none">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-exclamation-triangle-fill fs-2 text-warning"></i>
+          <div>
+            <h4 class="alert-heading fw-bold">Search Index Not Built Yet</h4>
+            <p class="mb-2">The LogLens query engine cannot find an active search index on disk.</p>
+            <p class="mb-2">Run the following command in your terminal to ingest sample data and build the persistent index:</p>
+            <pre class="bg-black text-warning p-3 rounded font-monospace border border-secondary mb-3">python -m loglens.cli ingest data/</pre>
+            <button class="btn btn-warning fw-semibold" id="retryAfterIngestBtn">
+              <i class="bi bi-arrow-clockwise me-1"></i> Refresh & Check Index
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI STATE 3: INVALID QUERY SYNTAX ERROR -->
+      <div id="stateInvalidQuery" class="alert alert-danger border-danger p-4 rounded shadow-sm d-none">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-x-octagon-fill fs-2 text-danger"></i>
+          <div>
+            <h4 class="alert-heading fw-bold">Invalid Query Syntax</h4>
+            <p id="invalidQueryMessage" class="mb-2 font-monospace"></p>
+            <div class="p-3 bg-black rounded border border-secondary mb-2">
+              <small class="text-secondary d-block">Recommended Valid Syntax:</small>
+              <code id="invalidQueryExample" class="text-info fs-6"></code>
+            </div>
+            <p class="mb-0 text-secondary fs-8">Use standard boolean operators (AND, OR, NOT) and key:value filters (level:ERROR, service:payments).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI STATE 4: NO MATCHES FOUND -->
+      <div id="stateNoMatches" class="text-center py-5 px-3 d-none">
+        <i class="bi bi-search text-secondary display-4 d-block mb-3"></i>
+        <h4 class="fw-bold text-light">No Matching Log Records</h4>
+        <p class="text-secondary max-w-md mx-auto">
+          We couldn't find any log lines matching your exact query criteria.
+        </p>
+        <div class="d-inline-flex gap-2 mt-2">
+          <button class="btn btn-outline-info btn-sm" id="broadenSearchBtn">
+            <i class="bi bi-arrow-repeat me-1"></i> Clear Specific Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- UI STATE 5: SERVER ERROR / OFFLINE -->
+      <div id="stateApiError" class="alert alert-danger border-danger p-4 rounded shadow-sm d-none">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-wifi-off fs-2 text-danger"></i>
+          <div>
+            <h4 class="alert-heading fw-bold">API Connection Error</h4>
+            <p id="apiErrorMessage" class="mb-3">Could not communicate with the local LogLens API server.</p>
+            <button class="btn btn-outline-light btn-sm min-touch-target" id="retrySearchBtn">
+              <i class="bi bi-arrow-clockwise me-1"></i> Retry Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI STATE 6: SEARCH RESULTS CONTAINER -->
+      <!-- Responsive: Table on tablet/desktop, stacked cards on mobile -->
+      <div id="resultsContainer" class="d-none">
+        
+        <!-- Desktop / Tablet Table View (768px+) -->
+        <div class="table-responsive d-none d-md-block border border-secondary rounded">
+          <table class="table table-dark table-hover mb-0 align-middle font-monospace fs-8" id="resultsTable">
+            <thead class="table-black border-bottom border-secondary text-secondary">
+              <tr>
+                <th scope="col" style="width: 80px;">Line ID</th>
+                <th scope="col" style="width: 190px;">Timestamp (UTC)</th>
+                <th scope="col" style="width: 85px;">Level</th>
+                <th scope="col" style="width: 120px;">Service</th>
+                <th scope="col">Message & Context</th>
+                <th scope="col" style="width: 90px;" class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+              <!-- Rendered dynamically by app.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile Stacked Cards View (<768px) -->
+        <div class="d-block d-md-none" id="resultsMobileCards">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: ERROR SPIKE ANALYTICS VIEW        -->
+    <!-- ========================================== -->
+    <section id="analyticsView" class="app-view d-none">
+      
+      <!-- Analytics Header Strip -->
+      <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="h3 fw-bold mb-1 text-light">Operational Error Spike Analytics</h2>
+          <p class="text-secondary mb-0">Automated 3-sigma anomaly detection over rolling 7-day baseline windows.</p>
+        </div>
+        <button class="btn btn-outline-primary btn-sm min-touch-target" id="refreshAnalyticsBtn">
+          <i class="bi bi-arrow-clockwise me-1"></i> Refresh Data
+        </button>
+      </div>
+
+      <!-- Analytics Unavailable State -->
+      <div id="analyticsUnavailable" class="alert alert-info border-info p-4 rounded shadow-sm d-none">
+        <h4 class="alert-heading fw-bold"><i class="bi bi-info-circle me-2"></i>Analytics Not Generated Yet</h4>
+        <p>The daily aggregation and matplotlib error spike analysis has not been executed.</p>
+        <p>Run the analysis command in your terminal to process synthetic logs and build charts:</p>
+        <pre class="bg-black text-info p-3 rounded font-monospace border border-secondary mb-3">python -m loglens.cli analyze</pre>
+        <button class="btn btn-info fw-semibold" id="checkAnalyticsAgainBtn">Check Again</button>
+      </div>
+
+      <!-- Analytics Content -->
+      <div id="analyticsContent" class="d-none">
+        
+        <div class="row g-4">
+          <!-- Chart Column -->
+          <div class="col-12 col-xl-7">
+            <div class="card bg-secondary-dark border-secondary h-100">
+              <div class="card-header bg-black border-secondary py-3">
+                <h5 class="card-title mb-0 text-light fw-bold">
+                  <i class="bi bi-bar-chart-line text-primary me-2"></i>Daily Log Volume & Anomaly Markers
+                </h5>
+              </div>
+              <div class="card-body text-center p-3">
+                <img id="spikeChartImg" src="" alt="Daily Error Spikes Chart" class="img-fluid rounded border border-secondary shadow-sm">
+                <div class="text-secondary fs-8 mt-2">
+                  Generated with matplotlib. Red circular markers denote days exceeding rolling 7-day mean + 3 std.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spikes Table & Interpretation Column -->
+          <div class="col-12 col-xl-5">
+            <!-- Spike Days Table -->
+            <div class="card bg-secondary-dark border-secondary mb-4">
+              <div class="card-header bg-black border-secondary py-3">
+                <h5 class="card-title mb-0 text-light fw-bold">
+                  <i class="bi bi-exclamation-octagon text-danger me-2"></i>Detected 3-Sigma Spike Days
+                </h5>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-dark table-striped mb-0 font-monospace fs-8">
+                  <thead class="text-secondary border-bottom border-secondary">
+                    <tr>
+                      <th>Date</th>
+                      <th>Errors</th>
+                      <th>Rolling Mean</th>
+                      <th>Threshold (3σ)</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="spikeTableBody">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Interpretation Summary Card -->
+            <div class="card bg-secondary-dark border-secondary">
+              <div class="card-header bg-black border-secondary py-3">
+                <h5 class="card-title mb-0 text-light fw-bold">
+                  <i class="bi bi-file-earmark-medical text-info me-2"></i>Automated SRE Diagnostic Interpretation
+                </h5>
+              </div>
+              <div class="card-body">
+                <div id="interpretationText" class="text-light fs-8 font-monospace bg-black p-3 rounded border border-secondary" style="max-height: 250px; overflow-y: auto;">
+                  <!-- Rendered markdown/text -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: INDEX DIAGNOSTICS & STATS VIEW     -->
+    <!-- ========================================== -->
+    <section id="statsView" class="app-view d-none">
+      
+      <div class="mb-4">
+        <h2 class="h3 fw-bold mb-1 text-light">Index Statistics & Diagnostic Metadata</h2>
+        <p class="text-secondary mb-0">Live metrics from InvertedIndex, StructuredIndex, and LineStore.</p>
+      </div>
+
+      <div class="row g-3">
+        <!-- Metric Cards -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-secondary-dark border-secondary p-3">
+            <span class="text-secondary fs-8 text-uppercase fw-bold">Total Lines Ingested</span>
+            <h3 class="display-6 fw-bold text-light my-2" id="statCardTotalLines">-</h3>
+            <span class="text-success fs-8"><i class="bi bi-check-circle me-1"></i>Valid & Indexed</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-secondary-dark border-secondary p-3">
+            <span class="text-secondary fs-8 text-uppercase fw-bold">Vocabulary Size</span>
+            <h3 class="display-6 fw-bold text-info my-2" id="statCardVocab">-</h3>
+            <span class="text-secondary fs-8">Unique Alphanumeric Tokens</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-secondary-dark border-secondary p-3">
+            <span class="text-secondary fs-8 text-uppercase fw-bold">Total Postings</span>
+            <h3 class="display-6 fw-bold text-warning my-2" id="statCardPostings">-</h3>
+            <span class="text-secondary fs-8">Compact 32-bit uint array items</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-secondary-dark border-secondary p-3">
+            <span class="text-secondary fs-8 text-uppercase fw-bold">RAM Consumption</span>
+            <h3 class="display-6 fw-bold text-light my-2" id="statCardMemory">-</h3>
+            <span class="text-info fs-8">Zero garbage collection pressure</span>
+          </div>
+        </div>
+
+        <!-- Services Distribution -->
+        <div class="col-12 col-md-6">
+          <div class="card bg-secondary-dark border-secondary h-100">
+            <div class="card-header bg-black border-secondary py-3">
+              <h5 class="card-title mb-0 fw-bold text-light">Tracked Services</h5>
+            </div>
+            <div class="card-body">
+              <div id="statsServicesBadges" class="d-flex flex-wrap gap-2">
+                <!-- Badges -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manifest Details -->
+        <div class="col-12 col-md-6">
+          <div class="card bg-secondary-dark border-secondary h-100">
+            <div class="card-header bg-black border-secondary py-3">
+              <h5 class="card-title mb-0 fw-bold text-light">Index Manifest Details</h5>
+            </div>
+            <div class="card-body">
+              <pre id="statsManifestJson" class="bg-black p-3 rounded font-monospace text-light fs-8 border border-secondary mb-0" style="max-height: 200px; overflow-y: auto;"></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL: LINE CONTEXT INSPECTION             -->
+  <!-- ========================================== -->
+  <div class="modal fade" id="contextModal" tabindex="-1" aria-labelledby="contextModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-secondary-dark text-light border border-secondary shadow-lg">
+        <div class="modal-header bg-black border-secondary">
+          <h5 class="modal-title font-monospace" id="contextModalTitle">
+            <i class="bi bi-layers me-2 text-primary"></i>Line Context Inspection
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-3">
+          <p class="text-secondary fs-8 mb-3">
+            Showing adjacent lines retrieved directly from disk via file byte offsets around target line:
+          </p>
+          <div class="context-lines-container font-monospace fs-8" id="contextLinesList">
+            <!-- Dynamic lines -->
+          </div>
+        </div>
+        <div class="modal-footer bg-black border-secondary">
+          <button type="button" class="btn btn-secondary min-touch-target" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle with Popper via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Main Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
