@@ -1,0 +1,8 @@
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# Large benchmark files
+data/benchmark_*.log
+data/large_*.log

@@ -26,3 +26,7 @@ data/large_*.log
 # OS
 .DS_Store
 Thumbs.db
+.vercel
+.python-version
+pyproject.toml
+uv.lock

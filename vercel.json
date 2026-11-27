@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/search", "destination": "/api/index.py?endpoint=search" },
+    { "source": "/stats", "destination": "/api/index.py?endpoint=stats" },
+    { "source": "/line/:id", "destination": "/api/index.py?endpoint=line&id=:id" },
+    { "source": "/analytics", "destination": "/api/index.py?endpoint=analytics" },
+    { "source": "/api/search", "destination": "/api/index.py?endpoint=search" },
+    { "source": "/api/stats", "destination": "/api/index.py?endpoint=stats" },
+    { "source": "/api/line/:id", "destination": "/api/index.py?endpoint=line&id=:id" },
+    { "source": "/api/analytics", "destination": "/api/index.py?endpoint=analytics" },
+    { "source": "/output/(.*)", "destination": "/output/$1" }
+  ]
+}

@@ -1,0 +1,2 @@
+# Zero external dependencies required for LogLens Serverless Engine
+# Core engine uses pure Python standard library (re, array, bisect, json, http.server)
