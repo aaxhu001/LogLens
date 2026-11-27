@@ -38,6 +38,21 @@ SERVER_STATE = LogLensServerState(
     output_dir=OUTPUT_DIR,
 )
 
+# Fix path portability: remap stored index file paths to current environment
+if SERVER_STATE.index_loaded and SERVER_STATE.line_store:
+    new_paths = []
+    for fp in SERVER_STATE.line_store.file_paths:
+        if not os.path.exists(fp):
+            fname = os.path.basename(fp)
+            candidate = os.path.join(ROOT_DIR, "data", fname)
+            if os.path.exists(candidate):
+                new_paths.append(candidate)
+            else:
+                new_paths.append(fp)
+        else:
+            new_paths.append(fp)
+    SERVER_STATE.line_store.file_paths = new_paths
+
 # On serverless cold start, ensure index is loaded in memory
 if not SERVER_STATE.index_loaded and os.path.exists(DATA_PATH):
     try:

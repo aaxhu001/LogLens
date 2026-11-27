@@ -93,6 +93,21 @@ class LineStore:
         length = self.byte_lengths[line_id]
         file_path = self.file_paths[file_id]
 
+        # Portability fallback: if stored path does not exist on this host, check relative locations
+        if not os.path.exists(file_path):
+            basename = os.path.basename(file_path)
+            candidate_paths = [
+                os.path.join(os.getcwd(), "data", basename),
+                os.path.join(os.getcwd(), basename),
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", basename),
+            ]
+            for candidate in candidate_paths:
+                normalized_candidate = os.path.abspath(candidate)
+                if os.path.exists(normalized_candidate):
+                    file_path = normalized_candidate
+                    self.file_paths[file_id] = file_path
+                    break
+
         with open(file_path, "rb") as f:
             f.seek(offset)
             raw_bytes = f.read(length)
